@@ -37,6 +37,14 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->group('dashboard', static function ($router) {
+    $router->get('/', 'Dashboard::index');
+});
+
+$routes->group('user', static function ($router) {
+    $router->get('/', 'User::index');
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
