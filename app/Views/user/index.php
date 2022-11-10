@@ -23,8 +23,8 @@
                             <tr>
                                 <td>
                                     <div class="d-flex px-2 py-1">
-                                        <div>
-                                            <i class="fa-lg bi bi-person-circle mx-2"></i>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <i class="text-primary fa-lg bi bi-person-circle mx-3"></i>
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="mb-0 text-sm">John Michael</h6>

@@ -1,0 +1,569 @@
+ERROR - 2022-11-09 08:04:10 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:171
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Database.php(67): CodeIgniter\Database\BaseConnection->initialize()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Database/CreateDatabase.php(137): CodeIgniter\Database\Config::forge()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\CreateDatabase->run()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(65): CodeIgniter\CLI\Commands->run()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(920): CodeIgniter\CLI\CommandRunner->_remap()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
+#11 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#12 /mnt/work/Project/STIKI/Liani/si-pkh/spark(98): CodeIgniter\CLI\Console->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:215
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Database.php(67): CodeIgniter\Database\BaseConnection->initialize()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Database/CreateDatabase.php(137): CodeIgniter\Database\Config::forge()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\CreateDatabase->run()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(65): CodeIgniter\CLI\Commands->run()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(920): CodeIgniter\CLI\CommandRunner->_remap()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#11 /mnt/work/Project/STIKI/Liani/si-pkh/spark(98): CodeIgniter\CLI\Console->run()
+#12 {main}
+ERROR - 2022-11-09 08:04:43 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:171
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Database.php(67): CodeIgniter\Database\BaseConnection->initialize()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Database/CreateDatabase.php(137): CodeIgniter\Database\Config::forge()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\CreateDatabase->run()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(65): CodeIgniter\CLI\Commands->run()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(920): CodeIgniter\CLI\CommandRunner->_remap()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
+#11 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#12 /mnt/work/Project/STIKI/Liani/si-pkh/spark(98): CodeIgniter\CLI\Console->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:215
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Database.php(67): CodeIgniter\Database\BaseConnection->initialize()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Database/CreateDatabase.php(137): CodeIgniter\Database\Config::forge()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\CreateDatabase->run()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(65): CodeIgniter\CLI\Commands->run()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(920): CodeIgniter\CLI\CommandRunner->_remap()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#11 /mnt/work/Project/STIKI/Liani/si-pkh/spark(98): CodeIgniter\CLI\Console->run()
+#12 {main}
+ERROR - 2022-11-09 08:04:54 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:171
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php(171): mysqli->real_connect()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Database.php(67): CodeIgniter\Database\BaseConnection->initialize()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Database/CreateDatabase.php(137): CodeIgniter\Database\Config::forge()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\CreateDatabase->run()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(65): CodeIgniter\CLI\Commands->run()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(920): CodeIgniter\CLI\CommandRunner->_remap()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
+#11 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#12 /mnt/work/Project/STIKI/Liani/si-pkh/spark(98): CodeIgniter\CLI\Console->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:215
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Database.php(67): CodeIgniter\Database\BaseConnection->initialize()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Database/CreateDatabase.php(137): CodeIgniter\Database\Config::forge()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\CreateDatabase->run()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(65): CodeIgniter\CLI\Commands->run()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(920): CodeIgniter\CLI\CommandRunner->_remap()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(347): CodeIgniter\CodeIgniter->handleRequest()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#11 /mnt/work/Project/STIKI/Liani/si-pkh/spark(98): CodeIgniter\CLI\Console->run()
+#12 {main}
+CRITICAL - 2022-11-09 08:31:48 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:32:16 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:32:17 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:32:17 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:32:17 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:32:18 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:33:54 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:33:55 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:34:41 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:34:47 --> Too few arguments to function App\Models\Modelfile::__construct(), 0 passed in /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php on line 20 and exactly 1 expected
+in APPPATH/Models/Modelfile.php on line 19.
+ 1 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 2 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:34:58 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 845.
+ 1 APPPATH/Models/Modelfile.php(24): CodeIgniter\Database\BaseConnection->table()
+ 2 APPPATH/Controllers/Coba.php(20): App\Models\Modelfile->__construct()
+ 3 APPPATH/Controllers/Coba.php(14): App\Controllers\Coba->listdata()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:56:56 --> Undefined array key "draw"
+in APPPATH/Controllers/Coba.php on line 21.
+ 1 APPPATH/Controllers/Coba.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:58:11 --> Undefined array key "draw"
+in APPPATH/Controllers/Coba.php on line 21.
+ 1 APPPATH/Controllers/Coba.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 08:58:29 --> Undefined array key "search"
+in APPPATH/Controllers/Coba.php on line 24.
+ 1 APPPATH/Controllers/Coba.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 09:07:19 --> Call to undefined method App\Models\Coba::countAllResult
+in SYSTEMPATH/Model.php on line 774.
+ 1 APPPATH/Controllers/Coba.php(33): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 09:07:38 --> Call to undefined method App\Models\Coba::countAllResult
+in SYSTEMPATH/Model.php on line 774.
+ 1 APPPATH/Controllers/Coba.php(33): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 09:07:59 --> Undefined array key "draw"
+in APPPATH/Controllers/Coba.php on line 26.
+ 1 APPPATH/Controllers/Coba.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 09:08:21 --> Call to undefined method App\Models\Coba::countAllResult
+in SYSTEMPATH/Model.php on line 774.
+ 1 APPPATH/Controllers/Coba.php(33): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 09:08:25 --> Call to undefined method App\Models\Coba::countAllResult
+in SYSTEMPATH/Model.php on line 774.
+ 1 APPPATH/Controllers/Coba.php(33): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 09:56:56 --> Call to undefined method App\Models\Coba::countAllResult
+in SYSTEMPATH/Model.php on line 774.
+ 1 APPPATH/Controllers/Coba.php(42): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 09:56:59 --> Call to undefined method App\Models\Coba::countAllResult
+in SYSTEMPATH/Model.php on line 774.
+ 1 APPPATH/Controllers/Coba.php(42): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 09:57:12 --> Call to undefined method App\Models\Coba::countAllResult
+in SYSTEMPATH/Model.php on line 774.
+ 1 APPPATH/Controllers/Coba.php(21): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->index()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+ERROR - 2022-11-09 19:55:34 --> mysqli_sql_exception: Unknown column 'search_value' in 'where clause' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php(41): CodeIgniter\Model->countAllResults()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Server/rewrite.php(46): require_once('...')
+#11 {main}
+CRITICAL - 2022-11-09 19:55:34 --> Unknown column 'search_value' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH/Controllers/Coba.php(41): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 8 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 19:58:01 --> Undefined variable $draw
+in APPPATH/Controllers/Coba.php on line 40.
+ 1 APPPATH/Controllers/Coba.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+ERROR - 2022-11-09 19:58:18 --> mysqli_sql_exception: Unknown column 'search_value' in 'where clause' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php(41): CodeIgniter\Model->countAllResults()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Server/rewrite.php(46): require_once('...')
+#11 {main}
+CRITICAL - 2022-11-09 19:58:18 --> Unknown column 'search_value' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH/Controllers/Coba.php(41): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 8 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+ERROR - 2022-11-09 20:14:03 --> mysqli_sql_exception: Unknown column 'search_value' in 'where clause' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php(41): CodeIgniter\Model->countAllResults()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Server/rewrite.php(46): require_once('...')
+#11 {main}
+CRITICAL - 2022-11-09 20:14:03 --> Unknown column 'search_value' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH/Controllers/Coba.php(41): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 8 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+ERROR - 2022-11-09 20:16:58 --> mysqli_sql_exception: Unknown column 'search_value' in 'where clause' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php(37): CodeIgniter\Model->countAllResults()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Server/rewrite.php(46): require_once('...')
+#11 {main}
+CRITICAL - 2022-11-09 20:16:58 --> Unknown column 'search_value' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH/Controllers/Coba.php(37): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 8 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:17:29 --> CodeIgniter\Database\BaseBuilder::limit(): Argument #1 ($value) must be of type ?int, string given, called in /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php on line 772
+in SYSTEMPATH/Database/BaseBuilder.php on line 1460.
+ 1 SYSTEMPATH/Model.php(772): CodeIgniter\Database\BaseBuilder->limit()
+ 2 APPPATH/Models/Coba.php(33): CodeIgniter\Model->__call()
+ 3 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+ERROR - 2022-11-09 20:18:15 --> mysqli_sql_exception: Unknown column 'search_value' in 'where clause' in /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mnt/work/Project/STIKI/Liani/si-pkh/system/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+#4 /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /mnt/work/Project/STIKI/Liani/si-pkh/app/Controllers/Coba.php(37): CodeIgniter\Model->countAllResults()
+#6 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+#7 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+#8 /mnt/work/Project/STIKI/Liani/si-pkh/system/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+#9 /mnt/work/Project/STIKI/Liani/si-pkh/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /mnt/work/Project/STIKI/Liani/si-pkh/system/Commands/Server/rewrite.php(46): require_once('...')
+#11 {main}
+CRITICAL - 2022-11-09 20:18:15 --> Unknown column 'search_value' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH/Controllers/Coba.php(37): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 8 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:19:10 --> syntax error, unexpected single-quoted string "recordsFiltered", expecting "]"
+in APPPATH/Controllers/Coba.php on line 38.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:28:18 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getAllResults()
+in APPPATH/Models/Coba.php on line 36.
+ 1 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:28:27 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getAllResult()
+in APPPATH/Models/Coba.php on line 36.
+ 1 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 2 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 3 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:29:50 --> CodeIgniter\Database\BaseBuilder::limit(): Argument #2 ($offset) must be of type ?int, string given, called in /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php on line 772
+in SYSTEMPATH/Database/BaseBuilder.php on line 1460.
+ 1 SYSTEMPATH/Model.php(772): CodeIgniter\Database\BaseBuilder->limit()
+ 2 APPPATH/Models/Coba.php(33): CodeIgniter\Model->__call()
+ 3 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:43:42 --> CodeIgniter\Database\BaseBuilder::limit(): Argument #2 ($offset) must be of type ?int, string given, called in /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php on line 772
+in SYSTEMPATH/Database/BaseBuilder.php on line 1460.
+ 1 SYSTEMPATH/Model.php(772): CodeIgniter\Database\BaseBuilder->limit()
+ 2 APPPATH/Models/Coba.php(34): CodeIgniter\Model->__call()
+ 3 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:48:32 --> Uninitialized string offset 0
+in APPPATH/Models/Coba.php on line 28.
+ 1 APPPATH/Models/Coba.php(28): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:48:33 --> Uninitialized string offset 0
+in APPPATH/Models/Coba.php on line 28.
+ 1 APPPATH/Models/Coba.php(28): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:48:33 --> Uninitialized string offset 0
+in APPPATH/Models/Coba.php on line 28.
+ 1 APPPATH/Models/Coba.php(28): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:48:34 --> Uninitialized string offset 0
+in APPPATH/Models/Coba.php on line 28.
+ 1 APPPATH/Models/Coba.php(28): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 3 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 4 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:52:37 --> CodeIgniter\Database\BaseBuilder::limit(): Argument #2 ($offset) must be of type ?int, string given, called in /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php on line 772
+in SYSTEMPATH/Database/BaseBuilder.php on line 1460.
+ 1 SYSTEMPATH/Model.php(772): CodeIgniter\Database\BaseBuilder->limit()
+ 2 APPPATH/Models/Coba.php(33): CodeIgniter\Model->__call()
+ 3 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:52:37 --> CodeIgniter\Database\BaseBuilder::limit(): Argument #2 ($offset) must be of type ?int, string given, called in /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php on line 772
+in SYSTEMPATH/Database/BaseBuilder.php on line 1460.
+ 1 SYSTEMPATH/Model.php(772): CodeIgniter\Database\BaseBuilder->limit()
+ 2 APPPATH/Models/Coba.php(33): CodeIgniter\Model->__call()
+ 3 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:56:50 --> CodeIgniter\Database\BaseBuilder::limit(): Argument #2 ($offset) must be of type ?int, string given, called in /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php on line 772
+in SYSTEMPATH/Database/BaseBuilder.php on line 1460.
+ 1 SYSTEMPATH/Model.php(772): CodeIgniter\Database\BaseBuilder->limit()
+ 2 APPPATH/Models/Coba.php(33): CodeIgniter\Model->__call()
+ 3 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:56:51 --> CodeIgniter\Database\BaseBuilder::limit(): Argument #2 ($offset) must be of type ?int, string given, called in /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php on line 772
+in SYSTEMPATH/Database/BaseBuilder.php on line 1460.
+ 1 SYSTEMPATH/Model.php(772): CodeIgniter\Database\BaseBuilder->limit()
+ 2 APPPATH/Models/Coba.php(33): CodeIgniter\Model->__call()
+ 3 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
+CRITICAL - 2022-11-09 20:56:52 --> CodeIgniter\Database\BaseBuilder::limit(): Argument #2 ($offset) must be of type ?int, string given, called in /mnt/work/Project/STIKI/Liani/si-pkh/system/Model.php on line 772
+in SYSTEMPATH/Database/BaseBuilder.php on line 1460.
+ 1 SYSTEMPATH/Model.php(772): CodeIgniter\Database\BaseBuilder->limit()
+ 2 APPPATH/Models/Coba.php(33): CodeIgniter\Model->__call()
+ 3 APPPATH/Controllers/Coba.php(32): App\Models\Coba->searchAndDisplay()
+ 4 SYSTEMPATH/CodeIgniter.php(927): App\Controllers\Coba->ambilData()
+ 5 SYSTEMPATH/CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(46): require_once('FCPATH/index.php')
