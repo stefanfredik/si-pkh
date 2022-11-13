@@ -108,3 +108,49 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="/argon/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    const config = {
+        columnDefs: [{
+            width: 20,
+            targets: 0
+        }],
+        language: {
+            paginate: {
+                first: "Awal",
+                last: "Akhir",
+                next: '<i class="bi bi-arrow-right-circle"></i>',
+                previous: '<i class="bi bi-arrow-left-circle"></i>'
+            },
+            zeroRecords: "Belum ada data.",
+            search: "Cari:",
+            lengthMenu: "Tampil _MENU_ kolom",
+            info: "Kolom _START_ sampai _END_ dari _TOTAL_ kolom"
+        }
+    }
+    $(document).ready(function() {
+        $('#table').DataTable(config);
+    });
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        // timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    <?php if ($swall = session()->getFlashdata('swall')) :
+    ?>
+        Toast.fire({
+            icon: '<?= esc($swall['status']); ?>',
+            title: '<?= esc($swall['msg']); ?>'
+        })
+    <?php endif; ?>
+</script>

@@ -45,12 +45,46 @@ $routes->group('dashboard', static function ($router) {
 
 $routes->group('user', static function ($router) {
     $router->get('/', 'User::index');
+    $router->get('tambah', 'User::tambah');
+    $router->get('edit/(:num)', 'User::edit/$1');
+    $router->get('delete/(:num)', 'User::delete/$1');
+    $router->get('password/(:num)', 'User::password/$1');
+
+    $router->post("/", "User::add");
+    $router->post("(:num)", "User::update/$1");
+    $router->post('password/(:num)', 'User::gantiPassword/$1');
+});
+
+$routes->group('warga', static function ($router) {
+    $router->get('/', 'Warga::index');
+    $router->get('tambah', 'Warga::tambah');
+    $router->get('edit/(:num)', 'Warga::edit/$1');
+    $router->get('detail/(:num)', 'Warga::detail/$1');
+    $router->get('delete/(:num)', 'Warga::delete/$1');
+    $router->get('password/(:num)', 'Warga::password/$1');
+
+    $router->post("/", "Warga::add");
+    $router->post("(:num)", "Warga::update/$1");
+});
+
+
+$routes->group('danabantuan', static function ($router) {
+    $router->get('/', 'Danabantuan::index');
+    $router->get('tambah', 'Danabantuan::tambah');
+    $router->get('edit/(:num)', 'Danabantuan::edit/$1');
+    $router->get('detail/(:num)', 'Danabantuan::detail/$1');
+    $router->get('delete/(:num)', 'Danabantuan::delete/$1');
+    $router->get('password/(:num)', 'Danabantuan::password/$1');
+
+    $router->post("/", "Danabantuan::add");
+    $router->post("(:num)", "Danabantuan::update/$1");
 });
 
 $routes->group('coba', static function ($router) {
     $router->get('/', 'Coba::index');
     $router->post('data', 'Coba::ambilData');
 });
+
 
 /*
  * --------------------------------------------------------------------

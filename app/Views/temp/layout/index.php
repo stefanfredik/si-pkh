@@ -18,8 +18,9 @@
             <?= $this->include("temp/layout/footer"); ?>
         </div>
     </main>
-    <!--   Core JS Files   -->
     <?= $this->include("temp/layout/script"); ?>
+
+    <?= $this->renderSection("script"); ?>
 </body>
 
 </html>

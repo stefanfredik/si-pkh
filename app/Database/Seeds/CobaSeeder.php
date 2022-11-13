@@ -17,5 +17,8 @@ class CobaSeeder extends Seeder {
         ];
 
         $data->insert($d);
+
+
+
     }
 }
