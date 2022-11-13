@@ -67,10 +67,47 @@ $routes->group('warga', static function ($router) {
     $router->post("(:num)", "Warga::update/$1");
 });
 
+$routes->group('pendamping', static function ($router) {
+    $router->get('/', 'Pendamping::index');
+    $router->get('tambah', 'Pendamping::tambah');
+    $router->get('edit/(:num)', 'Warga::edit/$1');
+    $router->get('detail/(:num)', 'Warga::detail/$1');
+    $router->get('delete/(:num)', 'Warga::delete/$1');
+    $router->get('password/(:num)', 'Warga::password/$1');
+
+    $router->post("/", "Warga::add");
+    $router->post("(:num)", "Warga::update/$1");
+});
+
+
+$routes->group('pengurus', static function ($router) {
+    $router->get('/', 'Pengurus::index');
+    $router->get('tambah', 'Pengurus::tambah');
+    $router->get('edit/(:num)', 'Warga::edit/$1');
+    $router->get('detail/(:num)', 'Warga::detail/$1');
+    $router->get('delete/(:num)', 'Warga::delete/$1');
+    $router->get('password/(:num)', 'Warga::password/$1');
+
+    $router->post("/", "Warga::add");
+    $router->post("(:num)", "Warga::update/$1");
+});
+
 
 $routes->group('danabantuan', static function ($router) {
     $router->get('/', 'Danabantuan::index');
     $router->get('tambah', 'Danabantuan::tambah');
+    $router->get('edit/(:num)', 'Danabantuan::edit/$1');
+    $router->get('detail/(:num)', 'Danabantuan::detail/$1');
+    $router->get('delete/(:num)', 'Danabantuan::delete/$1');
+    $router->get('password/(:num)', 'Danabantuan::password/$1');
+
+    $router->post("/", "Danabantuan::add");
+    $router->post("(:num)", "Danabantuan::update/$1");
+});
+
+$routes->group('transaksi', static function ($router) {
+    $router->get('/', 'Transaksi::index');
+    $router->get('tambah', 'Transaksi::tambah');
     $router->get('edit/(:num)', 'Danabantuan::edit/$1');
     $router->get('detail/(:num)', 'Danabantuan::detail/$1');
     $router->get('delete/(:num)', 'Danabantuan::delete/$1');

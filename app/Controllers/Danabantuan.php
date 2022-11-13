@@ -23,7 +23,6 @@ class Danabantuan extends BaseController {
     }
 
     public function index() {
-
         // dd($this->bantuanModel->findAll());
         $data = [
             'title' => 'Data Warga',
@@ -41,6 +40,7 @@ class Danabantuan extends BaseController {
             'info' => $this->info,
             'dataPengurus' => $this->userModel->findAllPengurus()
         ];
+        
         return view("/bantuan/tambah", $data);
     }
 
