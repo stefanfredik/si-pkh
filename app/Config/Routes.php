@@ -108,13 +108,36 @@ $routes->group('danabantuan', static function ($router) {
 $routes->group('transaksi', static function ($router) {
     $router->get('/', 'Transaksi::index');
     $router->get('tambah', 'Transaksi::tambah');
-    $router->get('edit/(:num)', 'Danabantuan::edit/$1');
-    $router->get('detail/(:num)', 'Danabantuan::detail/$1');
-    $router->get('delete/(:num)', 'Danabantuan::delete/$1');
-    $router->get('password/(:num)', 'Danabantuan::password/$1');
+    $router->get('edit/(:num)', 'Transaksi::edit/$1');
+    $router->get('detail/(:num)', 'Transaksi::detail/$1');
+    $router->get('delete/(:num)', 'Transaksi::delete/$1');
 
-    $router->post("/", "Danabantuan::add");
-    $router->post("(:num)", "Danabantuan::update/$1");
+    $router->post("/", "Transaksi::add");
+    $router->post("(:num)", "Transaksi::update/$1");
+});
+
+
+$routes->group('disabilitas', static function ($router) {
+    $router->get('/', 'Disabilitas::index');
+    $router->get('tambah', 'Disabilitas::tambah');
+    $router->get('edit/(:num)', 'Disabilitas::edit/$1');
+    $router->get('detail/(:num)', 'Disabilitas::detail/$1');
+    $router->get('delete/(:num)', 'Disabilitas::delete/$1');
+
+    $router->post("/", "Disabilitas::add");
+    $router->post("(:num)", "Disabilitas::update/$1");
+});
+
+
+$routes->group('lansia', static function ($router) {
+    $router->get('/', 'Lansia::index');
+    $router->get('tambah', 'Lansia::tambah');
+    $router->get('edit/(:num)', 'Lansia::edit/$1');
+    $router->get('detail/(:num)', 'Lansia::detail/$1');
+    $router->get('delete/(:num)', 'Lansia::delete/$1');
+
+    $router->post("/", "Lansia::add");
+    $router->post("(:num)", "Lansia::update/$1");
 });
 
 $routes->group('coba', static function ($router) {

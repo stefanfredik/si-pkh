@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\DanabantuanModel;
 use App\Models\UserModel;
 use App\Models\WargaModel;
 use CodeIgniter\API\ResponseTrait;
@@ -19,15 +20,26 @@ class Warga extends BaseController {
     public function __construct() {
         $this->wargaModel = new WargaModel();
         $this->userModel = new UserModel();
+        $this->bantuanModel = new DanabantuanModel();
     }
 
     public function index() {
-        // dd($this->wargaModel->findAll());
+        $tahun = $this->request->getGet('tahun');
+        $periode = $this->request->getGet('periode');
+        $bantuan = $this->request->getGet('bantuan');
+
+        $dataWarga = $this->wargaModel->filter($tahun, $periode, $bantuan);
+
+
         $data = [
             'title' => 'Data Warga',
-            'dataWarga' => $this->wargaModel->findAll(),
-            'info' => $this->info
+            'dataWarga' => $dataWarga,
+            'info' => $this->info,
+            'danaBantuan' => $this->bantuanModel->findAll()
         ];
+        // echo $periode;
+
+        // dd($data);
 
         return view("warga/index", $data);
     }
@@ -37,7 +49,8 @@ class Warga extends BaseController {
             'title' => 'Tambah Data ' . $this->info['title'],
             'validation' => $this->validation,
             'info' => $this->info,
-            'dataPendamping' => $this->userModel->findAllPendamping()
+            'dataPendamping' => $this->userModel->findAllPendamping(),
+            'danaBantuan' => $this->bantuanModel->findAll()
         ];
         return view("/warga/tambah", $data);
     }
@@ -68,9 +81,7 @@ class Warga extends BaseController {
 
     public function detail($id) {
         $warga = $this->wargaModel->find($id);
-        // dd($warga);
         $warga ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-
         $data = [
             'title' => 'Detail ' . $warga['nama_lengkap'],
             'warga' => $warga,
@@ -86,7 +97,6 @@ class Warga extends BaseController {
 
         $data = $this->request->getPost();
         $this->wargaModel->update($id, $data);
-
         setSwall("Sukses Mengupdate Data");
         return redirect()->to($this->info['url']);
     }
@@ -104,7 +114,7 @@ class Warga extends BaseController {
             'msg'   => 'Sukses Menghapus Data!',
         ];
 
-        setSwall("Sukses Menghaspus Data.");
+        setSwall("Sukses Menghapus Data.");
         return redirect()->to('/warga');
     }
 }

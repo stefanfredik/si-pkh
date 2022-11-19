@@ -3,7 +3,7 @@
 <script src="/argon/assets/js/plugins/perfect-scrollbar.min.js"></script>
 <script src="/argon/assets/js/plugins/smooth-scrollbar.min.js"></script>
 <script src="/argon/assets/js/plugins/chartjs.min.js"></script>
-<script>
+<!-- <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
 
     var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
@@ -94,7 +94,7 @@
             },
         },
     });
-</script>
+</script> -->
 <script>
     var win = navigator.platform.indexOf("Win") > -1;
     if (win && document.querySelector("#sidenav-scrollbar")) {
@@ -154,3 +154,6 @@
         })
     <?php endif; ?>
 </script>
+
+
+<?= $this->renderSection("script"); ?>

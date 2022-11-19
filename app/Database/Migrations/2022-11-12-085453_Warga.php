@@ -87,7 +87,18 @@ class Warga extends Migration {
             ], 'pendamping' => [
                 'type' => 'VARCHAR',
                 'constraint' => 64
-            ], 'created_at' => [
+            ], 'jenis_bantuan' => [
+                'type' => 'INT',
+            ],
+            'tahun' => [
+                'type' => 'INT',
+                'constraint' => 4
+            ],
+            'periode' => [
+                'type' => 'VARCHAR',
+                'constraint' => 32
+            ],
+            'created_at' => [
                 'type' => 'DATETIME'
             ], 'updated_at' => [
                 'type' => 'DATETIME'

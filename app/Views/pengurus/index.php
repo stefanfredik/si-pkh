@@ -12,18 +12,22 @@
                     <table id="table" class="table align-items-center mb-0 border rounded">
                         <thead>
                             <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Lengkap</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NIK</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ID Penamping</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
-                                
-                                <th width="150px" class="text-secondary opacity-7">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($dataPengurus as $dt) : ?>
+                            <?php $no = 1;
+                            foreach ($dataPengurus as $dt) : ?>
                                 <tr>
+                                    <th><?= $no++; ?></th>
                                     <td class="text-capitalize"><?= $dt['nama_user']; ?></td>
+                                    <td><?= $dt['no_nik']; ?></td>
+                                    <td><?= 'PN-' . str_pad($dt['id'], 4, '0', STR_PAD_LEFT); ?></td>
+                                    <td><?= $dt['alamat']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

@@ -15,6 +15,10 @@ class User extends Migration {
                 'type' => 'VARCHAR',
                 'constraint' => 64
             ],
+            'no_nik' => [
+                'type' => 'VARCHAR',
+                'constraint' => 64
+            ],
             'jabatan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 64
@@ -22,6 +26,18 @@ class User extends Migration {
             'username' => [
                 'type' => 'VARCHAR',
                 'constraint' => 64
+            ],
+            'jenis_kelamin' => [
+                'type' => 'VARCHAR',
+                'constraint' => 32
+            ],
+            'telepon' => [
+                'type' => 'VARCHAR',
+                'constraint' => 16
+            ],
+            'alamat' => [
+                'type' => 'VARCHAR',
+                'constraint' => 16
             ],
             'password' => [
                 'type' => 'VARCHAR',

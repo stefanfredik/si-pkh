@@ -11,7 +11,7 @@
     </div>
     <hr class="horizontal dark mt-0" />
 
-    <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+    <div class="sidenav-body w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link active" href="/dashboard">
@@ -52,22 +52,25 @@
                     <span class="nav-link-text ms-1">Data Pengurus</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/warga">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Data Warga</span>
-                </a>
-            </li>
 
-            <hr class="horizontal dark mt-0" />
             <li class="nav-item">
                 <a class="nav-link" href="/danabantuan">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-app text-info text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Data Dana Bantuan</span>
+                </a>
+            </li>
+
+            <hr class="horizontal dark mt-0" />
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/warga">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Data Warga</span>
                 </a>
             </li>
 
@@ -81,16 +84,35 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/transaksi">
+                <a class="nav-link" href="/lansia">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
                     </div>
+                    <span class="nav-link-text ms-1">Data Lansia</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/disabilitas">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Data Disabilitas</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/laporan">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
+                    </div>
+
                     <span class="nav-link-text ms-1">Laporan</span>
                 </a>
             </li>
         </ul>
     </div>
-    <div class="sidenav-footer mx-3">
+    <div class="sidenav-footer mx-3 p-3">
         <a class="btn btn-primary btn-sm mb-0 w-100" href="/logout" type=" button">Logout</a>
     </div>
 </aside>
