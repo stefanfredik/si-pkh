@@ -3,31 +3,40 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use Myth\Auth\Models\UserModel as UsersModel;
 
-class UserModel extends Model {
+class UserModel extends UsersModel {
     protected $DBGroup          = 'default';
-    protected $table            = 'user';
+    protected $table            = 'users';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'nama_user', 'no_nik', 'jabatan', 'username', 'password', 'jenis_kelamin', 'alamat', 'telepon', 'created_at', 'updated_at', 'last_login'];
+    protected $allowedFields    = ['id', 'nama_user', 'no_nik', 'jabatan', 'username', 'password', 'jenis_kelamin', 'alamat', 'telepon',];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 
-    public function findAllPengurus() {
-        $this->where('jabatan', 'pengurus');
-        return $this->findAll();
-    }
+    // Validation
+    protected $validationRules      = [];
+    protected $validationMessages   = [];
+    protected $skipValidation       = false;
+    protected $cleanValidationRules = true;
 
-    public function findAllPendamping() {
-        $this->where('jabatan', 'pendamping');
-        return $this->findAll();
-    }
+    // Callbacks
+    protected $allowCallbacks = true;
+    protected $beforeInsert   = [];
+    protected $afterInsert    = [];
+    protected $beforeUpdate   = [];
+    protected $afterUpdate    = [];
+    protected $beforeFind     = [];
+    protected $afterFind      = [];
+    protected $beforeDelete   = [];
+    protected $afterDelete    = [];
 }

@@ -21,6 +21,7 @@ class User extends BaseController {
             'dataUser' => $this->userModel->findAll()
         ];
 
+
         return view("user/index", $data);
     }
 
@@ -29,6 +30,7 @@ class User extends BaseController {
             'title' => 'Tambah Data User',
             'validation' => $this->validation
         ];
+
         return view("/user/tambah", $data);
     }
 
@@ -67,7 +69,7 @@ class User extends BaseController {
             return redirect()->to('/user/tambah')->withInput()->with('validation', $data);
         } else {
             $data = $this->request->getPost();
-            $this->userModel->save($data);
+            $this->userModel->withGroup()->save($data);
 
             setSwall("Sukses Menambah Data Data");
             return redirect()->to('/user');
