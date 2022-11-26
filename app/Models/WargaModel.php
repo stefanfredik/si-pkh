@@ -34,10 +34,10 @@ class WargaModel extends Model {
     function filter($tahun = null, $periode = null, $bantuan = null) {
 
         $this->select('warga.*');
-        $this->select('user.nama_user,user.id as id_user');
+        $this->select('users.nama_user,users.id as id_user');
         $this->select('danabantuan.nama_bantuan');
         $this->select('danabantuan.id as id_bantuan');
-        $this->join('user', 'user.id = warga.pendamping');
+        $this->join('users', 'users.id = warga.pendamping');
         $this->join('danabantuan', 'danabantuan.id = warga.jenis_bantuan');
 
         if ($tahun) {
@@ -58,8 +58,8 @@ class WargaModel extends Model {
     function find($id = null) {
         $this->select('warga.*');
         $this->where('warga.id', $id);
-        $this->select('user.nama_user');
-        $this->join('user', 'user.id = warga.pendamping');
+        $this->select('users.nama_user');
+        $this->join('users', 'users.id = warga.pendamping');
         return $this->first();
     }
 }

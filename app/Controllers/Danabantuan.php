@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\DanabantuanModel;
 use App\Models\bantuanModel;
-use App\Models\UserModel;
+use App\Models\UsersModel as UserModel;
 use CodeIgniter\API\ResponseTrait;
 
 class Danabantuan extends BaseController {
@@ -40,7 +40,7 @@ class Danabantuan extends BaseController {
             'info' => $this->info,
             'dataPengurus' => $this->userModel->findAllPengurus()
         ];
-        
+
         return view("/bantuan/tambah", $data);
     }
 

@@ -37,7 +37,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Dashboard::index');
 
 $routes->group('dashboard', static function ($router) {
     $router->get('/', 'Dashboard::index');
@@ -143,6 +143,12 @@ $routes->group('lansia', static function ($router) {
 $routes->group('coba', static function ($router) {
     $router->get('/', 'Coba::index');
     $router->post('data', 'Coba::ambilData');
+});
+
+
+$routes->group('laporan', static function ($router) {
+    $router->get('/', 'Laporan::index');
+    $router->post('cetak', 'Laporan::cetak');
 });
 
 

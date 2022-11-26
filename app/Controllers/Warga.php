@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\DanabantuanModel;
-use App\Models\UserModel;
+use App\Models\UsersModel;
 use App\Models\WargaModel;
 use CodeIgniter\API\ResponseTrait;
 
@@ -19,7 +19,7 @@ class Warga extends BaseController {
 
     public function __construct() {
         $this->wargaModel = new WargaModel();
-        $this->userModel = new UserModel();
+        $this->userModel = new UsersModel();
         $this->bantuanModel = new DanabantuanModel();
     }
 

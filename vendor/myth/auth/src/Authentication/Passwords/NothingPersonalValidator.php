@@ -9,8 +9,7 @@ use CodeIgniter\Entity\Entity;
  *
  * Checks password does not contain any personal information
  */
-class NothingPersonalValidator extends BaseValidator implements ValidatorInterface
-{
+class NothingPersonalValidator extends BaseValidator implements ValidatorInterface {
     /**
      * Returns true if $password contains no part of the username
      * or the user's email. Otherwise, it returns false.
@@ -19,8 +18,7 @@ class NothingPersonalValidator extends BaseValidator implements ValidatorInterfa
      *
      * @param Entity $user
      */
-    public function check(string $password, ?Entity $user = null): bool
-    {
+    public function check(string $password, ?Entity $user = null): bool {
         $password = \strtolower($password);
 
         if ($valid = $this->isNotPersonal($password, $user) === true) {
@@ -52,8 +50,7 @@ class NothingPersonalValidator extends BaseValidator implements ValidatorInterfa
      *
      * @return bool
      */
-    protected function isNotPersonal($password, $user)
-    {
+    protected function isNotPersonal($password, $user) {
         $userName = \strtolower($user->username);
         $email    = \strtolower($user->email);
         $valid    = true;
@@ -73,11 +70,12 @@ class NothingPersonalValidator extends BaseValidator implements ValidatorInterfa
             // Take username apart for use as search needles
             $needles = $this->strip_explode($userName);
 
+
             // extract local-part and domain parts from email as separate needles
             [$localPart, $domain] = \explode('@', $email);
             // might be john.doe@example.com and we want all the needles we can get
             $emailParts = $this->strip_explode($localPart);
-            if (! empty($domain)) {
+            if (!empty($domain)) {
                 $emailParts[] = $domain;
             }
             $needles = \array_merge($needles, $emailParts);
@@ -86,7 +84,7 @@ class NothingPersonalValidator extends BaseValidator implements ValidatorInterfa
             $personalFields = $this->config->personalFields;
 
             foreach ($personalFields as $value) {
-                if (! empty($user->{$value})) {
+                if (!empty($user->{$value})) {
                     $needles[] = \strtolower($user->{$value});
                 }
             }
@@ -144,8 +142,7 @@ class NothingPersonalValidator extends BaseValidator implements ValidatorInterfa
      *
      * @return bool
      */
-    protected function isNotSimilar($password, $user)
-    {
+    protected function isNotSimilar($password, $user) {
         $maxSimilarity = (float) $this->config->maxSimilarity;
         // sanity checking - working range 1-100, 0 is off
         if ($maxSimilarity < 1) {
@@ -154,7 +151,7 @@ class NothingPersonalValidator extends BaseValidator implements ValidatorInterfa
             $maxSimilarity = 100;
         }
 
-        if (! empty($maxSimilarity)) {
+        if (!empty($maxSimilarity)) {
             $userName = \strtolower($user->username);
 
             similar_text($password, $userName, $similarity);
@@ -179,13 +176,12 @@ class NothingPersonalValidator extends BaseValidator implements ValidatorInterfa
      *
      * @return array
      */
-    protected function strip_explode($str)
-    {
+    protected function strip_explode($str) {
         $stripped = \preg_replace('/[\W_]+/', ' ', $str);
         $parts    = \explode(' ', \trim($stripped));
 
         // If it's not already there put the untouched input at the top of the array
-        if (! in_array($str, $parts, true)) {
+        if (!in_array($str, $parts, true)) {
             array_unshift($parts, $str);
         }
 

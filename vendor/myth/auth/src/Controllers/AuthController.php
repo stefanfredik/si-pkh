@@ -8,8 +8,7 @@ use Myth\Auth\Config\Auth as AuthConfig;
 use Myth\Auth\Entities\User;
 use Myth\Auth\Models\UserModel;
 
-class AuthController extends Controller
-{
+class AuthController extends Controller {
     protected $auth;
 
     /**
@@ -22,8 +21,7 @@ class AuthController extends Controller
      */
     protected $session;
 
-    public function __construct()
-    {
+    public function __construct() {
         // Most services in this controller require
         // the session to be started - so fire it up!
         $this->session = service('session');
@@ -41,8 +39,7 @@ class AuthController extends Controller
      * the user to their destination/home if
      * they are already logged in.
      */
-    public function login()
-    {
+    public function login() {
         // No need to show a login form if the user
         // is already logged in.
         if ($this->auth->check()) {
@@ -62,8 +59,7 @@ class AuthController extends Controller
      * Attempts to verify the user's credentials
      * through a POST request.
      */
-    public function attemptLogin()
-    {
+    public function attemptLogin() {
         $rules = [
             'login'    => 'required',
             'password' => 'required',
@@ -72,7 +68,7 @@ class AuthController extends Controller
             $rules['login'] .= '|valid_email';
         }
 
-        if (! $this->validate($rules)) {
+        if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
@@ -84,7 +80,7 @@ class AuthController extends Controller
         $type = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
         // Try to log them in...
-        if (! $this->auth->attempt([$type => $login, 'password' => $password], $remember)) {
+        if (!$this->auth->attempt([$type => $login, 'password' => $password], $remember)) {
             return redirect()->back()->withInput()->with('error', $this->auth->error() ?? lang('Auth.badAttempt'));
         }
 
@@ -102,8 +98,7 @@ class AuthController extends Controller
     /**
      * Log the user out.
      */
-    public function logout()
-    {
+    public function logout() {
         if ($this->auth->check()) {
             $this->auth->logout();
         }
@@ -118,15 +113,14 @@ class AuthController extends Controller
     /**
      * Displays the user registration page.
      */
-    public function register()
-    {
+    public function register() {
         // check if already logged in.
         if ($this->auth->check()) {
             return redirect()->back();
         }
 
         // Check if registration is allowed
-        if (! $this->config->allowRegistration) {
+        if (!$this->config->allowRegistration) {
             return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
         }
 
@@ -136,10 +130,9 @@ class AuthController extends Controller
     /**
      * Attempt to register a new user.
      */
-    public function attemptRegister()
-    {
+    public function attemptRegister() {
         // Check if registration is allowed
-        if (! $this->config->allowRegistration) {
+        if (!$this->config->allowRegistration) {
             return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
         }
 
@@ -151,7 +144,7 @@ class AuthController extends Controller
             'email'    => 'required|valid_email|is_unique[users.email]',
         ];
 
-        if (! $this->validate($rules)) {
+        if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
@@ -161,7 +154,7 @@ class AuthController extends Controller
             'pass_confirm' => 'required|matches[password]',
         ];
 
-        if (! $this->validate($rules)) {
+        if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
@@ -172,11 +165,11 @@ class AuthController extends Controller
         $this->config->requireActivation === null ? $user->activate() : $user->generateActivateHash();
 
         // Ensure default group gets assigned if set
-        if (! empty($this->config->defaultUserGroup)) {
+        if (!empty($this->config->defaultUserGroup)) {
             $users = $users->withGroup($this->config->defaultUserGroup);
         }
 
-        if (! $users->save($user)) {
+        if (!$users->save($user)) {
             return redirect()->back()->withInput()->with('errors', $users->errors());
         }
 
@@ -184,7 +177,7 @@ class AuthController extends Controller
             $activator = service('activator');
             $sent      = $activator->send($user);
 
-            if (! $sent) {
+            if (!$sent) {
                 return redirect()->back()->withInput()->with('error', $activator->error() ?? lang('Auth.unknownError'));
             }
 
@@ -203,8 +196,7 @@ class AuthController extends Controller
     /**
      * Displays the forgot password form.
      */
-    public function forgotPassword()
-    {
+    public function forgotPassword() {
         if ($this->config->activeResetter === null) {
             return redirect()->route('login')->with('error', lang('Auth.forgotDisabled'));
         }
@@ -216,8 +208,7 @@ class AuthController extends Controller
      * Attempts to find a user account with that password
      * and send password reset instructions to them.
      */
-    public function attemptForgot()
-    {
+    public function attemptForgot() {
         if ($this->config->activeResetter === null) {
             return redirect()->route('login')->with('error', lang('Auth.forgotDisabled'));
         }
@@ -229,7 +220,7 @@ class AuthController extends Controller
             ],
         ];
 
-        if (! $this->validate($rules)) {
+        if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
@@ -248,7 +239,7 @@ class AuthController extends Controller
         $resetter = service('resetter');
         $sent     = $resetter->send($user);
 
-        if (! $sent) {
+        if (!$sent) {
             return redirect()->back()->withInput()->with('error', $resetter->error() ?? lang('Auth.unknownError'));
         }
 
@@ -258,8 +249,7 @@ class AuthController extends Controller
     /**
      * Displays the Reset Password form.
      */
-    public function resetPassword()
-    {
+    public function resetPassword() {
         if ($this->config->activeResetter === null) {
             return redirect()->route('login')->with('error', lang('Auth.forgotDisabled'));
         }
@@ -278,8 +268,7 @@ class AuthController extends Controller
      *
      * @return mixed
      */
-    public function attemptReset()
-    {
+    public function attemptReset() {
         if ($this->config->activeResetter === null) {
             return redirect()->route('login')->with('error', lang('Auth.forgotDisabled'));
         }
@@ -301,7 +290,7 @@ class AuthController extends Controller
             'pass_confirm' => 'required|matches[password]',
         ];
 
-        if (! $this->validate($rules)) {
+        if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
@@ -314,7 +303,7 @@ class AuthController extends Controller
         }
 
         // Reset token still valid?
-        if (! empty($user->reset_expires) && time() > $user->reset_expires->getTimestamp()) {
+        if (!empty($user->reset_expires) && time() > $user->reset_expires->getTimestamp()) {
             return redirect()->back()->withInput()->with('error', lang('Auth.resetTokenExpired'));
         }
 
@@ -334,8 +323,7 @@ class AuthController extends Controller
      *
      * @return mixed
      */
-    public function activateAccount()
-    {
+    public function activateAccount() {
         $users = model(UserModel::class);
 
         // First things first - log the activation attempt.
@@ -371,8 +359,7 @@ class AuthController extends Controller
      *
      * @return mixed
      */
-    public function resendActivateAccount()
-    {
+    public function resendActivateAccount() {
         if ($this->config->requireActivation === null) {
             return redirect()->route('login');
         }
@@ -399,7 +386,7 @@ class AuthController extends Controller
         $activator = service('activator');
         $sent      = $activator->send($user);
 
-        if (! $sent) {
+        if (!$sent) {
             return redirect()->back()->withInput()->with('error', $activator->error() ?? lang('Auth.unknownError'));
         }
 
@@ -407,8 +394,7 @@ class AuthController extends Controller
         return redirect()->route('login')->with('message', lang('Auth.activationSuccess'));
     }
 
-    protected function _render(string $view, array $data = [])
-    {
+    protected function _render(string $view, array $data = []) {
         return view($view, $data);
     }
 }

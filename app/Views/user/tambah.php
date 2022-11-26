@@ -57,10 +57,9 @@
                                 <label for="example-text-input" class="form-control-label">Jabatan</label>
                                 <select required name="jabatan" id="" class="form-control">
                                     <option value="">Masukan Jabatan</option>
-                                    <option <?= set_value('jabatan') == 'admin' ? 'selected' : ''; ?> value="admin">Admin</option>
-                                    <option <?= set_value('jabatan') == 'pendamping' ? 'selected' : ''; ?> value="pendamping">Pendamping</option>
-                                    <option <?= set_value('jabatan') == 'pengurus' ? 'selected' : ''; ?> value="pengurus">Pengurus</option>
-                                    <option <?= set_value('jabatan') == 'kepaladesa' ? 'selected' : ''; ?> value="kepaladesa">Kepala Desa</option>
+                                    <?php foreach ($role as $r) : ?>
+                                        <option <?= set_value('jabatan') == $r['name'] ? 'selected' : ''; ?> value="<?= $r['name']; ?>"><?= $r['name']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
@@ -86,8 +85,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
 
 

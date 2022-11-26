@@ -17,6 +17,7 @@
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NIK</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ID Penamping</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Telepon</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,6 +29,7 @@
                                     <td><?= $dt['no_nik']; ?></td>
                                     <td><?= 'PD-' . str_pad($dt['id'], 4, '0', STR_PAD_LEFT); ?></td>
                                     <td><?= $dt['alamat']; ?></td>
+                                    <td><?= $dt['telepon']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

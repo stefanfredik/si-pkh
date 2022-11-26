@@ -18,8 +18,8 @@ class DanabantuanModel extends Model {
 
     function findAll(int $limit = 0, int $offset = 0) {
         $this->select('danabantuan.*');
-        $this->select('user.nama_user');
-        $this->join('user', 'user.id = danabantuan.id_pengurus');
+        $this->select('users.nama_user');
+        $this->join('users', 'users.id = danabantuan.id_pengurus');
         return $this->get()->getResult("array");
     }
 }

@@ -9,7 +9,7 @@ class CreateAuthTables extends Migration {
         // Users
         $this->forge->addField([
             'id'               => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
-            'email'            => ['type' => 'varchar', 'constraint' => 255],
+            // 'email'            => ['type' => 'varchar', 'constraint' => 255],
             'username'         => ['type' => 'varchar', 'constraint' => 30, 'null' => true],
             'nama_user'        => ['type' => 'VARCHAR', 'constraint' => 64, 'null' => false],
             'no_nik'           => ['type' => 'VARCHAR', 'constraint' => 64, 'null' => true],

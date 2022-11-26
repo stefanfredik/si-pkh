@@ -3,18 +3,18 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
-use Myth\Auth\Models\UserModel as UsersModel;
 
-class UserModel extends UsersModel {
+class Test extends Model
+{
     protected $DBGroup          = 'default';
-    protected $table            = 'users';
+    protected $table            = 'tests';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'nama_user', 'no_nik', 'jabatan', 'username', 'password', 'jenis_kelamin', 'alamat', 'telepon',];
+    protected $allowedFields    = [];
 
     // Dates
     protected $useTimestamps = false;

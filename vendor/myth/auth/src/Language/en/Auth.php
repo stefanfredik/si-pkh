@@ -28,7 +28,7 @@ return [
     'errorSendingActivation' => 'Failed to send activation message to: {0}',
 
     // Login
-    'badAttempt'      => 'Unable to log you in. Please check your credentials.',
+    'badAttempt'      => 'Login gagal, pastikan email dan password anda sudah benar.',
     'loginSuccess'    => 'Welcome back!',
     'invalidPassword' => 'Unable to log you in. Please check your password.',
 
@@ -79,7 +79,7 @@ return [
     'email'                     => 'Email',
     'emailAddress'              => 'Email Address',
     'sendInstructions'          => 'Send Instructions',
-    'loginTitle'                => 'Login',
+    'loginTitle'                => 'Halaman Login',
     'loginAction'               => 'Login',
     'rememberMe'                => 'Remember me',
     'needAnAccount'             => 'Need an account?',

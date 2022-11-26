@@ -3,14 +3,20 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\UserModel;
+use App\Models\UsersModel;
 use CodeIgniter\API\ResponseTrait;
+use Myth\Auth\Password;
 
 class User extends BaseController {
     use ResponseTrait;
 
+    private $info = [
+        'url' => 'user',
+        'title' => 'User'
+    ];
+
     public function __construct() {
-        $this->userModel = new UserModel();
+        $this->userModel = new UsersModel();
     }
 
     public function index() {
@@ -18,8 +24,11 @@ class User extends BaseController {
 
         $data = [
             'title' => 'Data User',
-            'dataUser' => $this->userModel->findAll()
+            'dataUser' => $this->userModel->findAll(),
+            'info' => $this->info
         ];
+
+        // dd($data);
 
 
         return view("user/index", $data);
@@ -28,8 +37,11 @@ class User extends BaseController {
     public function tambah() {
         $data = [
             'title' => 'Tambah Data User',
-            'validation' => $this->validation
+            'validation' => $this->validation,
+            'role'      => $this->userModel->findAllRole()
         ];
+
+        // dd($data);
 
         return view("/user/tambah", $data);
     }
@@ -40,10 +52,10 @@ class User extends BaseController {
                 'rules'  => 'required',
             ],
             'username'  => [
-                'rules'  => 'min_length[6]|required|is_unique[user.username]',
+                'rules'  => 'required|min_length[3]|max_length[30]|is_unique[users.username,id,{id}]',
                 'errors' => [
                     'is_unique' => 'Username telah digunakan.',
-                    'min_length' => 'Username minimal 6 Digit.'
+                    'min_length' => 'Username minimal 3 Digit.'
                 ]
             ],
             'password' => [
@@ -60,16 +72,27 @@ class User extends BaseController {
             ]
         ];
 
+
         if (!$this->validate($rules)) {
             $data = [
                 'validation' => $this->validation
             ];
 
             setSwall("Gagal Menambah Data Data!", "error");
-            return redirect()->to('/user/tambah')->withInput()->with('validation', $data);
+            return redirect()->to('/user/tambah')->withInput();
         } else {
-            $data = $this->request->getPost();
-            $this->userModel->withGroup()->save($data);
+            $data = [
+                'username' => $this->request->getPost('username'),
+                'nama_user' => $this->request->getPost('nama_user'),
+                'telepon' => $this->request->getPost('telepon'),
+                'no_nik' => $this->request->getPost('no_nik'),
+                'jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+                'alamat' => $this->request->getPost('alamat'),
+                'password_hash' => Password::hash($this->request->getPost('password')),
+                'active'    => 1
+            ];
+
+            $this->userModel->withGroup($this->request->getPost('jabatan'))->save($data);
 
             setSwall("Sukses Menambah Data Data");
             return redirect()->to('/user');
@@ -80,10 +103,12 @@ class User extends BaseController {
     public function edit($id) {
         $user = $this->userModel->find($id);
 
+        // dd($user);
         $data = [
             'title' => 'Edit Data ' . $user['nama_user'],
             'user' => $user,
-            'validation' => $this->validation
+            'validation' => $this->validation,
+            'role'      => $this->userModel->findAllRole()
         ];
 
         return view('/user/edit', $data);
@@ -94,7 +119,7 @@ class User extends BaseController {
         $user = $this->userModel->find($id);
 
 
-        $usernameRules = ($this->request->getPost('username') == $user['username']) ? 'required|min_length[6]' : 'min_length[6]|required|is_unique[user.username]';
+        $usernameRules = ($this->request->getPost('username') == $user['username']) ? 'required|min_length[3]' : 'min_length[3]|required|is_unique[users.username]';
         $rules = [
             'nama_user'  => [
                 'rules'  => 'required',
@@ -112,11 +137,20 @@ class User extends BaseController {
             $data = [
                 'validation' => $this->validation
             ];
-            return redirect()->back()->withInput()->with('validation', $data);
+            return redirect()->back()->withInput();
         }
 
-        $data = $this->request->getPost();
+        $data = [
+            'username' => $this->request->getPost('username'),
+            'nama_user' => $this->request->getPost('nama_user'),
+            'telepon' => $this->request->getPost('telepon'),
+            'no_nik' => $this->request->getPost('no_nik'),
+            'jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+            'alamat' => $this->request->getPost('alamat'),
+        ];
+
         $this->userModel->update($id, $data);
+        $this->userModel->updateGroup($id, $this->request->getPost("jabatan"));
 
         setSwall("Sukses Mengupdate Data");
         return redirect()->to('/user');
@@ -132,7 +166,7 @@ class User extends BaseController {
             'msg'   => 'Sukses Menghapus Data!',
         ];
 
-        setSwall("Sukses Menghaspus Data.");
+        setSwall("Sukses Menghapus Data.");
         return redirect()->to('/user');
     }
 
@@ -165,7 +199,8 @@ class User extends BaseController {
             return redirect()->back()->withInput()->with('validation', $data);
         }
 
-        $data = $this->request->getPost();
+
+        $data = ['password_hash' => Password::hash($this->request->getPost('password'))];
         $this->userModel->update($id, $data);
 
         setSwall("Sukses Menngganti Password.");

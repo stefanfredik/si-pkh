@@ -14,9 +14,10 @@
                         <thead>
                             <tr>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama User</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NIK</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jabatan</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Telepon</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Terkahir Login</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Alamat</th>
                                 <th width="150px" class="text-secondary opacity-7">Action</th>
                             </tr>
                         </thead>
@@ -35,16 +36,19 @@
                                         </div>
                                     </td>
 
+                                    <td class="align-middle">
+                                        <span class="text-secondary text-xs font-weight-bold"><?= $dt['no_nik']; ?></span>
+                                    </td>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0"><?= ucwords($dt['jabatan']); ?></p>
+                                        <p class="text-xs font-weight-bold mb-0"><?= @ucwords($dt['jabatan']); ?></p>
                                         <p class="text-xs text-secondary mb-0">Created At : <?= $dt['created_at']; ?></p>
                                     </td>
 
                                     <td class="align-middle">
                                         <span class="text-secondary text-xs font-weight-bold"><?= $dt['telepon']; ?></span>
                                     </td>
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold"><?= $dt['last_login']; ?></span>
+                                    <td class="align-middle">
+                                        <span class="text-secondary text-xs font-weight-bold"><?= $dt['alamat']; ?></span>
                                     </td>
 
                                     <td class="align-middle">
