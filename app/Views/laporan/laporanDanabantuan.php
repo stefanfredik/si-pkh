@@ -3,7 +3,7 @@
 
 
 
-<a href="/laporan/cetak/pengurus" class="btn btn-white text-primary"><i class="bi bi-printer-fill"></i> Cetak Laporan</a>
+<a href="/laporan/cetak/danabantuan" class="btn btn-white text-primary"><i class="bi bi-printer-fill"></i> Cetak Laporan</a>
 
 <div class="row">
 
@@ -27,7 +27,7 @@
                         </thead>
                         <tbody>
                             <?php $no = 1;
-                            foreach ($dataPengurus as $dt) : ?>
+                            foreach ($dataDanabantuan as $dt) : ?>
                                 <tr>
                                     <th><?= $no++; ?></th>
                                     <td class="text-capitalize"><?= $dt['nama_user']; ?></td>

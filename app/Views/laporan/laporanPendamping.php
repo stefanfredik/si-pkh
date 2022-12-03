@@ -3,7 +3,7 @@
 
 
 
-<a href="/laporan/cetak/pengurus" class="btn btn-white text-primary"><i class="bi bi-printer-fill"></i> Cetak Laporan</a>
+<a href="/laporan/cetak/pendamping" class="btn btn-white text-primary"><i class="bi bi-printer-fill"></i> Cetak Laporan</a>
 
 <div class="row">
 
@@ -27,12 +27,12 @@
                         </thead>
                         <tbody>
                             <?php $no = 1;
-                            foreach ($dataPengurus as $dt) : ?>
+                            foreach ($dataPendamping as $dt) : ?>
                                 <tr>
                                     <th><?= $no++; ?></th>
                                     <td class="text-capitalize"><?= $dt['nama_user']; ?></td>
                                     <td><?= $dt['no_nik']; ?></td>
-                                    <td><?= 'PN-' . str_pad($dt['id'], 4, '0', STR_PAD_LEFT); ?></td>
+                                    <td><?= 'PD-' . str_pad($dt['id'], 4, '0', STR_PAD_LEFT); ?></td>
                                     <td><?= $dt['alamat']; ?></td>
                                     <td><?= $dt['telepon']; ?></td>
                                 </tr>

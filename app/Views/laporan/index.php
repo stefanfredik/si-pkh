@@ -24,7 +24,7 @@
         <div class="card shadow">
             <div class="card-body d-flex flex-row justify-content-between">
                 <h5 class="card-title">Laporan warga</h5>
-                <a href="/laporan/pengurus" class="btn btn-primary">Detail</a>
+                <a href="/laporan/warga" class="btn btn-primary">Detail</a>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
         <div class="card shadow">
             <div class="card-body d-flex flex-row justify-content-between align-middle">
                 <h5 class="card-title">Laporan dana Bantuan</h5>
-                <a href="/laporan/pengurus" class="btn btn-primary">Detail</a>
+                <a href="/laporan/danabantuan" class="btn btn-primary">Detail</a>
             </div>
         </div>
     </div>

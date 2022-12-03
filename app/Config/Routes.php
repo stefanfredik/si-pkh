@@ -148,6 +148,15 @@ $routes->group('coba', static function ($router) {
 
 $routes->group('laporan', static function ($router) {
     $router->get('/', 'Laporan::index');
+    $router->get('pendamping', 'Laporan::pendamping');
+    $router->get('warga', 'Laporan::warga');
+    $router->get('danabantuan', 'Laporan::danabantuan');
+    $router->get('pengurus', 'Laporan::pengurus');
+
+    $router->get('cetak/pendamping', 'Laporan::cetak/pendamping');
+    $router->get('cetak/pengurus', 'Laporan::cetak/pengurus');
+    $router->get('cetak/warga', 'Laporan::cetak/warga');
+
     $router->post('cetak', 'Laporan::cetak');
 });
 
