@@ -69,7 +69,7 @@
                             <p for=""><?= $warga['no_kk']; ?></p>
                         </div>
                     </div>
-
+                    <!-- 
                     <div class="row">
                         <div class="col-md-4">
                             <label for="">Pendidikan</label>
@@ -77,25 +77,25 @@
                         <div class="col-md-8">
                             <p for=""><?= $warga['pendidikan']; ?></p>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-4">
                             <label for="">Pekerjaan</label>
                         </div>
                         <div class="col-md-8">
                             <p for=""><?= $warga['pekerjaan']; ?></p>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-4">
                             <label for="">Penghasilan</label>
                         </div>
                         <div class="col-md-8">
                             <p for=""><?= $warga['penghasilan']; ?></p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="row">
                         <div class="col-md-4">
@@ -181,62 +181,6 @@
                     </div>
 
                     <hr class="horizontal dark my-1">
-                    <p class="text-uppercase text-sm">Informasi Tanggungan</p>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="">Jumlah Anak</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p for=""><?= $warga['jumlah_anak']; ?></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="">Jumlah SD</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p for=""><?= $warga['jumlah_sd']; ?></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="">Jumlah SMP</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p for=""><?= $warga['jumlah_smp']; ?></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="">Jumlah SMA</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p for=""><?= $warga['jumlah_sma']; ?></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="">Jumlah Balita</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p for=""><?= $warga['jumlah_balita']; ?></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="">Jumlah Balita</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p for=""><?= $warga['jumlah_lansia']; ?></p>
-                        </div>
-                    </div>
-
-
                 </div>
 
                 <div class="card-footer">

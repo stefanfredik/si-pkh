@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,6 +31,7 @@
               <div class="card shadow">
 
                 <div class="card-header pb-0 text-start text-center">
+                  <img width="150px" class="img img-fluid" src="/assets/img/logo.png" alt="" srcset="">
                   <h4 class="font-weight-bolder"><?= lang('Auth.loginTitle') ?></h4>
                   <h5 class=""><?= WEBTITLE; ?></h5>
                   <p class="mb-0">Gunakan username dan password anda untuk Login</p>
@@ -87,11 +74,11 @@
               </div>
             </div>
             <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('/assets/img/kantor.jpeg');
+              <div class=" position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('/assets/img/kantor.jpeg');
           background-size: cover;">
                 <span class="mask bg-gradient-primary opacity-6"></span>
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">Selamat Datang.</h4>
-                <p class="text-white position-relative"><?= WEBTITLE; ?></p>
+                <h4 class="display-3 mt-5 text-white font-weight-bolder position-relative">Selamat Datang.</h4>
+                <p class="display-6 text-white position-relative"><?= WEBTITLE; ?></p>
               </div>
             </div>
           </div>
@@ -113,9 +100,7 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
   <script src="/argon/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 

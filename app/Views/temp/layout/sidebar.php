@@ -9,8 +9,8 @@
             <span class="ms-1 font-weight-bold"><?= WEBNAME; ?></span>
         </a>
     </div>
-    <hr class="horizontal dark mt-0" />
 
+    <hr class="horizontal dark mt-0" />
     <div class="sidenav-body w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -22,102 +22,11 @@
                 </div>
             </li>
             <hr>
-            <li class="nav-item">
-                <a class="nav-link <?= url_is('dashboard') ? 'active' : ''; ?>" href="/dashboard">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-shop text-primary text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">
-                    Data Master
-                </h6>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link <?= url_is('user*') ? 'active' : ''; ?>"" href=" /user">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-badge text-warning text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">User</span>
-                </a>
-            </li>
-            <hr class="horizontal dark mt-0" />
-            <li class="nav-item ">
-                <a class="nav-link <?= url_is('pendamping*') ? 'active' : ''; ?>" href="/pendamping">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-collection text-warning text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Data Pendamping</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link <?= url_is('pengurus*') ? 'active' : ''; ?>" href="/pengurus">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-books text-warning text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Data Pengurus</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link <?= url_is('danabantuan*') ? 'active' : ''; ?>" href="/danabantuan">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-diamond text-info text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Data Dana Bantuan</span>
-                </a>
-            </li>
-
-            <hr class="horizontal dark mt-0" />
-
-
-            <li class="nav-item">
-                <a class="nav-link <?= url_is('warga*') ? 'active' : ''; ?>" href="/warga">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-single-02 text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Data Warga</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link <?= url_is('transaksi*') ? 'active' : ''; ?>" href="/transaksi">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-money-coins text-danger text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Data Transaksi</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link <?= url_is('lansia*') ? 'active' : ''; ?>" href="/lansia">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-umbrella-13 text-danger text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Data Lansia</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link <?= url_is('disabilitas*') ? 'active' : ''; ?>" href="/disabilitas">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-favourite-28 text-danger text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Data Disabilitas</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link <?= url_is('laporan*') ? 'active' : ''; ?>" href="/laporan">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-bullet-list-67 text-primary text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Laporan</span>
-                </a>
-            </li>
+            <?php
+            if (in_groups("Admin")) echo $this->include("/temp/layout/sidebar/sidebarAdmin");
+            if (in_groups("Pengurus")) echo $this->include("/temp/layout/sidebar/sidebarPengurus");
+            if (in_groups("Pendamping")) echo $this->include("/temp/layout/sidebar/sidebarPendamping");
+            ?>
         </ul>
     </div>
     <div class="sidenav-footer mx-3 p-3">

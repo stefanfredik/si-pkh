@@ -7,6 +7,7 @@ use App\Models\DanabantuanModel;
 use App\Models\UsersModel;
 use App\Models\WargaModel;
 use CodeIgniter\API\ResponseTrait;
+use PhpParser\Node\Expr\Throw_;
 
 class Warga extends BaseController {
     use ResponseTrait;
@@ -23,28 +24,46 @@ class Warga extends BaseController {
         $this->bantuanModel = new DanabantuanModel();
     }
 
-    public function index() {
-        $tahun = $this->request->getGet('tahun');
-        $periode = $this->request->getGet('periode');
-        $bantuan = $this->request->getGet('bantuan');
+    public function index($jenisBantuan = null) {
+        if ($jenisBantuan == null) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
 
-        $dataWarga = $this->wargaModel->filter($tahun, $periode, $bantuan);
+        if ($jenisBantuan == 'bantuantunai') {
+            $dataWarga = $this->wargaModel->where("jenis_bantuan", 'bantuantunai')->findAll();
 
+            $data = [
+                'title' => 'Data Warga',
+                'dataWarga' => $dataWarga,
+                'info' => $this->info,
+                'danaBantuan' => $this->bantuanModel->findAll()
+            ];
 
-        $data = [
-            'title' => 'Data Warga',
-            'dataWarga' => $dataWarga,
-            'info' => $this->info,
-            'danaBantuan' => $this->bantuanModel->findAll()
-        ];
-        // echo $periode;
+            return view("warga/index", $data);
+        }
 
-        // dd($data);
+        // $tahun = $this->request->getGet('tahun');
+        // $periode = $this->request->getGet('periode');
+        // $bantuan = $this->request->getGet('bantuan');
 
-        return view("warga/index", $data);
+        // $dataWarga = $this->wargaModel->filter($tahun, $periode, $bantuan);
+
+        // $data = [
+        //     'title' => 'Data Warga',
+        //     'dataWarga' => $dataWarga,
+        //     'info' => $this->info,
+        //     'danaBantuan' => $this->bantuanModel->findAll()
+        // ];
+
+        // return view("warga/index", $data);
     }
 
-    public function tambah() {
+
+    public function tambah($jenisBantuan = null) {
+        if ($jenisBantuan == null) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
         $data = [
             'title' => 'Tambah Data ' . $this->info['title'],
             'validation' => $this->validation,
@@ -52,11 +71,31 @@ class Warga extends BaseController {
             'dataPendamping' => $this->userModel->findAllPendamping(),
             'danaBantuan' => $this->bantuanModel->findAll()
         ];
-        return view("/warga/tambah", $data);
+
+        if ($jenisBantuan == 'bantuantunai') {
+            return view("/warga/tambahBantuantunai", $data);
+        } else if ($jenisBantuan == 'lansia') {
+            return view("/warga/tambahLansia", $data);
+        } else if ($jenisBantuan == 'disabilitas') {
+            return view("/warga/disabilitas", $data);
+        }
     }
 
-    public function add() {
+    public function add($jenisBantuan = null) {
+        if ($jenisBantuan == null) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
         $data = $this->request->getPost();
+
+        if ($jenisBantuan == 'bantuantunai') {
+            $data['jenis_bantuan'] = 'bantuantunai';
+        } else if ($jenisBantuan == 'lansia') {
+            $data['jenis_bantuan'] = 'lansia';
+        } else if ($jenisBantuan == 'disabilitas') {
+            $data['jenis_bantuan'] = 'disabilitas';
+        }
+
         $this->wargaModel->save($data);
 
         setSwall("Sukses Menambah Data Data");
@@ -94,7 +133,6 @@ class Warga extends BaseController {
 
     public function update($id) {
         $warga = $this->wargaModel->find($id);
-
         $data = $this->request->getPost();
         $this->wargaModel->update($id, $data);
         setSwall("Sukses Mengupdate Data");

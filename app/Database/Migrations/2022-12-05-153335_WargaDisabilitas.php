@@ -4,13 +4,14 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Warga extends Migration {
+class WargaDisabilitas extends Migration {
     public function up() {
         $data = [
             'id' => [
                 'type' => 'INT',
                 'AUTO_INCREMENT' => true
-            ], 'nama_lengkap' => [
+            ],
+            'nama_lengkap' => [
                 'type' => 'VARCHAR',
                 'constraint' => 64
 
@@ -32,27 +33,12 @@ class Warga extends Migration {
                 'type' => 'DATE'
             ],
 
-            'pendidikan' => [
-                'type' => 'VARCHAR',
-                'constraint' => 32
-            ],
-
-            'pekerjaan' => [
+            'nama_pengasuh' => [
                 'type' => 'VARCHAR',
                 'constraint' => 64
             ],
 
-            'penghasilan' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64
-            ],
-
-            'no_telepon' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64
-            ],
-
-            'no_rek' => [
+            'nama_ibukandung' => [
                 'type' => 'VARCHAR',
                 'constraint' => 64
             ],
@@ -63,11 +49,6 @@ class Warga extends Migration {
             ],
 
             'rt_rw' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64
-            ],
-
-            'kode_pos' => [
                 'type' => 'VARCHAR',
                 'constraint' => 64
             ],
@@ -86,7 +67,6 @@ class Warga extends Migration {
                 'type' => 'VARCHAR',
                 'constraint' => 64
             ],
-
             'provinsi' => [
                 'type' => 'VARCHAR',
                 'constraint' => 64
@@ -96,43 +76,32 @@ class Warga extends Migration {
                 'type' => 'VARCHAR',
                 'constraint' => 64
             ],
-            'nama_pengasuh' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64
-            ],
 
-            'nama_ibukandung' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64
-            ],
-
-            'jenis_bantuan' => [
-                'type' => 'INT',
-            ],
             'tahun' => [
                 'type' => 'INT',
                 'constraint' => 4
             ],
+
             'periode' => [
                 'type' => 'VARCHAR',
                 'constraint' => 32
             ],
+
             'created_at' => [
                 'type' => 'DATETIME'
-            ],
-
-            'updated_at' => [
+            ], 'updated_at' => [
                 'type' => 'DATETIME'
-            ],
-
+            ], 'last_login' => [
+                'type' => 'DATETIME'
+            ]
         ];
 
         $this->forge->addField($data);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('warga');
+        $this->forge->createTable('warga_disabilitas');
     }
 
     public function down() {
-        $this->forge->dropTable('warga');
+        $this->forge->dropTable('warga_disabilitas');
     }
 }

@@ -12,43 +12,6 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="text-uppercase text-sm">Bantuan</p>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Jenis Bantuan</label>
-                                <select id="jenis_bantuan" class="form-control" name="jenis_bantuan" id="">
-                                    <option value="" selected>Pilih Jenis Bantuan</option>
-                                    <?php foreach ($danaBantuan as $db) : ?>
-                                        <option value="<?= $db['id']; ?>" selected><?= $db['nama_bantuan']; ?></option>
-                                    <?php endforeach;  ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Jenis Periode</label>
-                                <select class="form-control" name="periode" id="">
-                                    <option value="" selected>Pilih Periode</option>
-                                    <option value="Periode 1">Periode 1</option>
-                                    <option value="Periode 2">Periode 2</option>
-                                    <option value="Periode 3">Periode 3</option>
-                                    <option value="Periode 4">Periode 4</option>
-                                    <option value="Periode 5">Periode 5</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Tahun</label>
-                                <input required name="tahun" class="form-control" type="number" placeholder="Masukan Tahun">
-                            </div>
-                        </div>
-                    </div>
-
-
                     <p class="text-uppercase text-sm">Profil</p>
                     <div class="row">
                         <div class="col-md-12">
@@ -93,33 +56,6 @@
                                 <input required name="no_kk" class="form-control" type="number">
                             </div>
                         </div>
-                    </div>
-
-                    <!-- <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Pendidikan</label>
-                                <input required name="pendidikan" class="form-control" type="text">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Pekerjaan</label>
-                                <input required name="pekerjaan" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <div class="row">
-                        <!-- <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Penghasilan</label>
-                                <input required name="penghasilan" class="form-control" type="number">
-                            </div>
-                        </div> -->
-
-
                     </div>
 
                     <div class="row">
