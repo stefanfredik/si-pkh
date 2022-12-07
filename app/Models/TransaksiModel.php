@@ -26,7 +26,9 @@ class TransaksiModel extends Model {
         $this->select("warga.id as  warga_id");
         $this->select("transaksi.*");
         $this->select("warga.id as warga_id,warga.no_rek,warga.nama_lengkap,warga.no_nik,warga.pendamping,warga.alamat");
+        $this->select("users.nama_user as nama_pendamping");
         $this->join("warga", "warga.id = transaksi.id_warga");
+        $this->join("users", "users.id = warga.pendamping", 'left');
         return $this->get()->getResultArray();
     }
 }

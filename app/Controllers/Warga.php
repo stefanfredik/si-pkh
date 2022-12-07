@@ -7,7 +7,7 @@ use App\Models\DanabantuanModel;
 use App\Models\UsersModel;
 use App\Models\WargaModel;
 use CodeIgniter\API\ResponseTrait;
-use PhpParser\Node\Expr\Throw_;
+
 
 class Warga extends BaseController {
     use ResponseTrait;
@@ -29,17 +29,26 @@ class Warga extends BaseController {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
 
+        $dataWarga = $this->wargaModel->where("jenis_bantuan", 'bantuantunai')->findAll();
+        $data = [
+            'title' => 'Data Warga',
+            'dataWarga' => $dataWarga,
+            'info' => $this->info,
+            'danaBantuan' => $this->bantuanModel->findAll()
+        ];
+
         if ($jenisBantuan == 'bantuantunai') {
-            $dataWarga = $this->wargaModel->where("jenis_bantuan", 'bantuantunai')->findAll();
+            $data['title'] = 'Bantuan Tunai';
 
-            $data = [
-                'title' => 'Data Warga',
-                'dataWarga' => $dataWarga,
-                'info' => $this->info,
-                'danaBantuan' => $this->bantuanModel->findAll()
-            ];
+            return view("warga/bantuantunai/index", $data);
+        } else  if ($jenisBantuan == 'lansia') {
 
-            return view("warga/index", $data);
+            $data['title'] = 'Bantuan Lansia';
+            return view("warga/lansia/index", $data);
+        } else  if ($jenisBantuan == 'disabilitas') {
+
+            $data['title'] = 'Bantuan Disabilitas';
+            return view("warga/disabilitas/index", $data);
         }
 
         // $tahun = $this->request->getGet('tahun');
@@ -65,7 +74,6 @@ class Warga extends BaseController {
         }
 
         $data = [
-            'title' => 'Tambah Data ' . $this->info['title'],
             'validation' => $this->validation,
             'info' => $this->info,
             'dataPendamping' => $this->userModel->findAllPendamping(),
@@ -73,11 +81,17 @@ class Warga extends BaseController {
         ];
 
         if ($jenisBantuan == 'bantuantunai') {
-            return view("/warga/tambahBantuantunai", $data);
+
+            $data['title'] =  'Tambah Warga Bantuan Tunai';
+            return view("/warga/bantuantunai/tambah", $data);
         } else if ($jenisBantuan == 'lansia') {
-            return view("/warga/tambahLansia", $data);
+
+            $data['title'] =  'Tambah Warga Bantuan Lansia';
+            return view("/warga/lansia/tambah", $data);
         } else if ($jenisBantuan == 'disabilitas') {
-            return view("/warga/disabilitas", $data);
+
+            $data['title'] =  'Tambah Warga Bantuan Disabilitas';
+            return view("/warga/disabilitas/tambah", $data);
         }
     }
 
@@ -87,7 +101,6 @@ class Warga extends BaseController {
         }
 
         $data = $this->request->getPost();
-
         if ($jenisBantuan == 'bantuantunai') {
             $data['jenis_bantuan'] = 'bantuantunai';
         } else if ($jenisBantuan == 'lansia') {

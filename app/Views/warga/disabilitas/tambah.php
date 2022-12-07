@@ -99,6 +99,23 @@
                         </div>
                     </div>
 
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Nama Pengasuh</label>
+                                <input required name="nama_pengasuh" class="form-control" type="text">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Nama Ibu Kandung</label>
+                                <input required name="nama_ibukandung" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+
                     <hr class="horizontal dark my-1">
                     <p class="text-uppercase text-sm">Informasi Alamat</p>
                     <div class="row">

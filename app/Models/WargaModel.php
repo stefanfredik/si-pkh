@@ -13,7 +13,7 @@ class WargaModel extends Model {
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'nama_lengkap', 'jenis_kelamin', 'no_nik', 'no_kk', 'tanggal_lahir', 'pendidikan', 'pekerjaan', 'penghasilan', 'no_telepon', 'no_rek', 'alamat', 'rt_rw', 'kode_pos', 'desa', 'kecamatan', 'kabupaten', 'provinsi', 'jumlah_anak', 'jumlah_sd', 'jumlah_smp', 'jumlah_sma', 'jumlah_balita', 'jumlah_lansia', 'jumlah_disabilitas', 'pendamping', 'jenis_bantuan', 'tahun', 'periode', 'created_at', 'updated_at', 'last_login'];
+    protected $allowedFields    = ['id', 'nama_lengkap', 'jenis_kelamin', 'no_nik', 'no_kk', 'tanggal_lahir', 'pendidikan', 'pekerjaan', 'penghasilan', 'no_telepon', 'nama_ibukandung', 'nama_pengasuh', 'no_rek', 'alamat', 'rt_rw', 'kode_pos', 'desa', 'kecamatan', 'kabupaten', 'provinsi', 'pendamping', 'jenis_bantuan', 'tahun', 'periode', 'created_at', 'updated_at', 'last_login'];
 
     // Dates
     protected $useTimestamps = true;
@@ -61,5 +61,14 @@ class WargaModel extends Model {
         $this->select('users.nama_user');
         $this->join('users', 'users.id = warga.pendamping');
         return $this->first();
+    }
+
+
+    function findAllWarga($jenisBantuan = null) {
+        $this->select("warga.*");
+        $this->select('users.nama_user as nama_pendamping');
+        $this->where("warga.jenis_bantuan", $jenisBantuan);
+        $this->join('users', 'users.id = warga.pendamping');
+        return $this->findAll();
     }
 }

@@ -3,41 +3,35 @@
 
 
 <a href="/<?= $info['url']; ?>/tambah" class="btn btn-outline-white">Tambah Data <?= $info['title']; ?></a>
-
 <div class="row">
     <div class="col-12">
         <div class="card mb-4">
             <div class="card-header pb-0">
                 <h6><?= $title; ?></h6>
             </div>
-
             <div class="card-body px-4 pt-0 pb-2  ">
                 <div class="table-responsive p-0">
-                    <table id="table" class=" display table align-items-center mb-0 border rounded">
+                    <table id="table" class="table align-items-center mb-0 border rounded">
                         <thead>
                             <tr>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No.</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Lengkap</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Jenis Kelamin</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">No Telepon</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tahun</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Periode</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NIK</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ID Penamping</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Keterangan</th>
                                 <th width="150px" class="text-secondary opacity-7">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 1;
-                            foreach ($dataWarga as $dt) : ?>
+                            foreach ($dataDisabilitas as $dt) : ?>
                                 <tr>
-                                    <td class="text-center"><?= $no++; ?></td>
-                                    <td class="text-capitalize"><?= $dt['nama_lengkap']; ?></td>
-                                    <td class="text-capitalize"><?= $dt['jenis_kelamin']; ?></td>
-                                    <td class="text-capitalize"><?= $dt['no_telepon']; ?></td>
-                                    <td class="text-capitalize"><?= $dt['alamat']; ?></td>
-                                    <td class="text-capitalize"><?= $dt['tahun']; ?></td>
-                                    <td class="text-capitalize"><?= $dt['periode']; ?></td>
-                                    <?= view_cell('\App\Libraries\Widget::tombolAksi', ['url' => $info['url'], 'id' => $dt['id'], 'detail' => true]); ?>
+                                    <td class="text-secondary text-sm"><?= $no++; ?></td>
+                                    <td class="text-secondary text-sm"><?= $dt['nama_lengkap']; ?></td>
+                                    <td class="text-secondary text-sm"><?= $dt['no_nik']; ?></td>
+                                    <td class="text-secondary text-sm"><?= $dt['nama_pendamping']; ?></td>
+                                    <td class="text-secondary text-sm"><?= $dt['keterangan']; ?></td>
+                                    <?= view_cell('\App\Libraries\Widget::tombolAksi', ['url' => $info['url'], 'id' => $dt['id']]); ?>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

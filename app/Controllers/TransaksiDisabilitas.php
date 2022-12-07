@@ -3,30 +3,30 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\LansiaModel;
+use App\Models\DisabilitasModel;
 use App\Models\WargaModel;
 
-class Lansia extends BaseController {
+class TransaksiDisabilitas extends BaseController {
     private $info = [
-        'url' => 'lansia',
-        'title' => 'Lansia'
+        'url' => 'disabilitas/transaksi',
+        'title' => 'Data Transaksi Disabilitas'
     ];
+
+    private $jenisBantuan;
 
     public function __construct() {
         $this->wargaModel = new WargaModel();
-        $this->lansiaModel = new LansiaModel();
+        $this->disabilitasModel = new DisabilitasModel();
     }
 
     public function index() {
         $data = [
-            'title' => 'Data Lansia',
-            'dataLansia' => $this->lansiaModel->findAll(),
+            'title' => 'Data Disabilitas',
+            'dataDisabilitas' => $this->disabilitasModel->findAll(),
             'info' => $this->info,
         ];
 
-        // dd($data);
-
-        return view("lansia/index", $data);
+        return view("/transaksi/disabilitas/index", $data);
     }
 
     public function tambah() {
@@ -34,27 +34,24 @@ class Lansia extends BaseController {
             'title' => 'Tambah Data ' . $this->info['title'],
             'validation' => $this->validation,
             'info' => $this->info,
-            'dataWarga' => $this->wargaModel->findAll()
+            'dataWarga' => $this->wargaModel->findAllWarga($this->jenisBantuan)
         ];
 
-        return view("/lansia/tambah", $data);
+        return view("/transaksi/disabilitas/tambah", $data);
     }
 
     public function add() {
         $data = $this->request->getPost();
-        $this->lansiaModel->save($data);
+        $this->disabilitasModel->save($data);
 
         setSwall("Sukses Menambah Data");
-        return redirect()->to('/lansia');
+        return redirect()->to($this->info['url']);
     }
 
     public function delete($id) {
-        $lansia = $this->lansiaModel->find($id);
+        $lansia = $this->disabilitasModel->find($id);
         $lansia ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-
-        $this->lansiaModel->delete($id);
-        // $data = $this->request->getPost();
-        // $this->transaksiModel->save($data);
+        $this->disabilitasModel->delete($id);
 
         $res = [
             'status' => 'success',
@@ -62,16 +59,16 @@ class Lansia extends BaseController {
         ];
 
         setSwall("Sukses Menghapus Data.");
-        return redirect()->to('/lansia');
+        return redirect()->to($this->info['url']);
     }
 
     public function edit($id) {
-        $lansia = $this->lansiaModel->find($id);
+        $lansia = $this->disabilitasModel->find($id);
 
         $lansia ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 
         $data = [
-            'title' => 'Edit Data Lansia ' . str_pad($lansia['id'], 4, "0", STR_PAD_LEFT),
+            'title' => 'Edit Data Disabilitas ' . str_pad($lansia['id'], 4, "0", STR_PAD_LEFT),
             'lansia' => $lansia,
             'info' => $this->info,
             'dataWarga' => $this->wargaModel->findAll()
@@ -79,15 +76,16 @@ class Lansia extends BaseController {
 
         // dd($data);
 
-        return view('/lansia/edit', $data);
+        return view('/transaksi/disabilitas/edit', $data);
     }
 
     public function update($id) {
-        $lansia = $this->lansiaModel->find($id);
+        $lansia = $this->disabilitasModel->find($id);
         $lansia ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 
         $data = $this->request->getPost();
-        $this->lansiaModel->update($id, $data);
+        $this->disabilitasModel->update($id, $data);
+
         setSwall("Sukses Mengupdate Data");
         return redirect()->to($this->info['url']);
     }

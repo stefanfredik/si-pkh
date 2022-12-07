@@ -16,27 +16,29 @@
                             <tr>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID Transaksi</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Lengkap</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NIK</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID Penamping</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Lengkap</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Penamping</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No Rekening</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Jumlah</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Waktu Transaksi</th>
                                 <th width="150px" class="text-uppercase  text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1;
+                            <?php
+                            helper('rupiah');
+                            $no = 1;
                             foreach ($dataTransaksi as $dt) :  ?>
                                 <tr>
-                                    <td><?= $no++; ?></td>
-                                    <td class=""><?= str_pad($dt['id'], 4, '0', STR_PAD_LEFT); ?></td>
-                                    <td class=""><?= $dt['nama_lengkap']; ?></td>
-                                    <td class=""><?= $dt['no_nik']; ?></td>
-                                    <td class=""><?= $dt['pendamping']; ?></td>
-                                    <td class=""><?= $dt['no_rek']; ?></td>
-                                    <td><?= $dt['jumlah']; ?></td>
-                                    <td class=""><?= $dt['alamat']; ?></td>
+                                    <td class="text-secondary text-xs"><?= $no++; ?></td>
+                                    <td class="text-secondary text-xs"><?= str_pad($dt['id'], 4, '0', STR_PAD_LEFT); ?></td>
+                                    <td class="text-secondary text-xs"><?= $dt['no_nik']; ?></td>
+                                    <td class="text-secondary text-xs"><?= $dt['nama_lengkap']; ?></td>
+                                    <td class="text-secondary text-xs"><?= $dt['nama_pendamping']; ?></td>
+                                    <td class="text-secondary text-xs"><?= $dt['no_rek']; ?></td>
+                                    <td class="text-secondary text-xs"><?= rupiah($dt['jumlah']); ?></td>
+                                    <td class="text-secondary text-xs" class=""><?= $dt['tanggal_transaksi']; ?></td>
                                     <?= view_cell('\App\Libraries\Widget::tombolAksi', ['url' => $info['url'], 'id' => $dt['id']]); ?>
                                 </tr>
                             <?php endforeach; ?>

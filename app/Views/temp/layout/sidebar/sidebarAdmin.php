@@ -53,18 +53,8 @@
 
     <hr class="horizontal dark mt-0" />
 
-
-    <!-- <li class="nav-item">
-        <a class="nav-link <?= url_is('warga*') ? 'active' : ''; ?>" href="/warga">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="ni ni-single-02 text-success text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Data Warga</span>
-        </a>
-    </li> -->
-
     <li class="nav-item">
-        <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link active collapsed" aria-controls="dashboardsExamples" role="button" aria-expanded="false">
+        <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link  <?= url_is('*warga') ? 'active' : ''; ?> collapsed" aria-controls="dashboardsExamples" role="button" aria-expanded="false">
             <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
                 <i class="ni ni-shop text-primary text-sm opacity-10"></i>
             </div>
@@ -73,21 +63,21 @@
         <div class="collapse" id="dashboardsExamples">
             <ul class="nav ms-4">
                 <li class="nav-item active">
-                    <a class="nav-link active" href="/warga/tambah/bantuantunai">
+                    <a class="nav-link <?= url_is('/bantuantunai/warga') ? 'active' : ''; ?>" href="/bantuantunai/warga">
                         <span class="sidenav-mini-icon"> L </span>
                         <span class="sidenav-normal"> Bantuan Tunai </span>
                     </a>
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link active" href="/warga/tambah/disabilitas">
+                    <a class="nav-link <?= url_is('/disabilitas/warga') ? 'active' : ''; ?>" href="/disabilitas/warga">
                         <span class="sidenav-mini-icon"> L </span>
                         <span class="sidenav-normal"> Bantuan Disabilitas </span>
                     </a>
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link active" href="/warga/tambah/lansia">
+                    <a class="nav-link <?= url_is('/lansia/warga') ? 'active' : ''; ?>" href="/lansia/warga">
                         <span class="sidenav-mini-icon"> L </span>
                         <span class="sidenav-normal"> Bantuan Lansia </span>
                     </a>
@@ -96,32 +86,40 @@
         </div>
     </li>
 
+
     <li class="nav-item">
-        <a class="nav-link <?= url_is('transaksi*') ? 'active' : ''; ?>" href="/transaksi">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="ni ni-money-coins text-danger text-sm opacity-10"></i>
+        <a data-bs-toggle="collapse" href="#transaksi" class="nav-link <?= url_is('*transaksi') ? 'active' : ''; ?>" collapsed" aria-controls="dashboardsExamples" role="button" aria-expanded="false">
+            <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+                <i class="ni ni-shop text-primary text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1">Data Transaksi</span>
         </a>
+        <div class="collapse" id="transaksi">
+            <ul class="nav ms-4">
+                <li class="nav-item active">
+                    <a class="nav-link <?= url_is('/bantuantunai/transaksi') ? 'active' : ''; ?>" href="/bantuantunai/transaksi">
+                        <span class="sidenav-mini-icon"> L </span>
+                        <span class="sidenav-normal"> Bantuan Tunai </span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link <?= url_is('/disabilitas/transaksi') ? 'active' : ''; ?>" href="/disabilitas/transaksi">
+                        <span class="sidenav-mini-icon"> L </span>
+                        <span class="sidenav-normal"> Bantuan Disabilitas </span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link <?= url_is('/lansia/transaksi') ? 'active' : ''; ?>" href="/lansia/transaksi">
+                        <span class="sidenav-mini-icon"> L </span>
+                        <span class="sidenav-normal"> Bantuan Lansia </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link <?= url_is('lansia*') ? 'active' : ''; ?>" href="/lansia">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="ni ni-umbrella-13 text-danger text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Data Lansia</span>
-        </a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link <?= url_is('disabilitas*') ? 'active' : ''; ?>" href="/disabilitas">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="ni ni-favourite-28 text-danger text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Data Disabilitas</span>
-        </a>
-    </li>
 
     <li class="nav-item">
         <a class="nav-link <?= url_is('laporan*') ? 'active' : ''; ?>" href="/laporan">

@@ -6,12 +6,14 @@ use App\Controllers\BaseController;
 use App\Models\TransaksiModel;
 use App\Models\WargaModel;
 
-class Transaksi extends BaseController {
+class TransaksiBantuantunai extends BaseController {
 
     private $info = [
-        'url' => 'transaksi',
-        'title' => 'Transaksi'
+        'url' => 'bantuantunai/transaksi',
+        'title' => 'Transaksi Bantuan Tunai'
     ];
+
+    private $jenisBantuan = 'Bantuan Tunai';
 
     public function __construct() {
         $this->wargaModel = new WargaModel();
@@ -19,15 +21,14 @@ class Transaksi extends BaseController {
     }
 
     public function index() {
+
         $data = [
-            'title' => 'Data Transaksi',
+            'title' => 'Data Transaksi ' . $this->info['title'],
             'dataTransaksi' => $this->transaksiModel->findAll(),
             'info' => $this->info,
         ];
 
-        // dd($data);
-
-        return view("transaksi/index", $data);
+        return view("/transaksi/bantuantunai/index", $data);
     }
 
     public function tambah() {
@@ -35,10 +36,10 @@ class Transaksi extends BaseController {
             'title' => 'Tambah Data ' . $this->info['title'],
             'validation' => $this->validation,
             'info' => $this->info,
-            'dataWarga' => $this->wargaModel->findAll()
+            'dataWarga' => $this->wargaModel->findAllWarga($this->jenisBantuan)
         ];
 
-        return view("/transaksi/tambah", $data);
+        return view("/transaksi/bantuantunai/tambah", $data);
     }
 
 
@@ -47,7 +48,7 @@ class Transaksi extends BaseController {
         $this->transaksiModel->save($data);
 
         setSwall("Sukses Menambah Data Transaksi");
-        return redirect()->to('/transaksi');
+        return redirect()->to($this->info['url']);
     }
 
     public function delete($id) {
@@ -55,8 +56,7 @@ class Transaksi extends BaseController {
         $transaksi ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 
         $this->transaksiModel->delete($id);
-        // $data = $this->request->getPost();
-        // $this->transaksiModel->save($data);
+
 
         $res = [
             'status' => 'success',
@@ -64,7 +64,7 @@ class Transaksi extends BaseController {
         ];
 
         setSwall("Sukses Menghapus Data.");
-        return redirect()->to('/transaksi');
+        return redirect()->to($this->info['url']);
     }
 
     public function edit($id) {
@@ -79,7 +79,7 @@ class Transaksi extends BaseController {
             'dataWarga' => $this->wargaModel->findAll()
         ];
 
-        return view('/transaksi/edit', $data);
+        return view('/transaksi/bantuantunai/edit', $data);
     }
 
     public function update($id) {

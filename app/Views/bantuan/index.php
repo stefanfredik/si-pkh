@@ -1,7 +1,7 @@
 <?= $this->extend("temp/layout/index"); ?>
 <?= $this->section("content"); ?>
-
-<a href="/<?= $info['url']; ?>/tambah" class="btn btn-outline-white">Tambah Data <?= $info['title']; ?></a>
+<!-- 
+<a href="/<?= $info['url']; ?>/tambah" class="btn btn-outline-white">Tambah Data <?= $info['title']; ?></a> -->
 <div class="row">
     <div class="col-12">
         <div class="card mb-4">
@@ -28,7 +28,11 @@
                                     <td class="text-capitalize"><?= $dt['nama_bantuan']; ?></td>
                                     <td class="text-capitalize"><?= $dt['nama_user']; ?></td>
                                     <td class="text-capitalize"><?= $dt['keterangan']; ?></td>
-                                    <?= view_cell('\App\Libraries\Widget::tombolAksi', ['url' => $info['url'], 'id' => $dt['id']]); ?>
+                                    <td class="align-middle">
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <a href="/<?= $info['url']; ?>/edit/<?= $dt['id'] ?>" class="btn btn-sm btn-primary"><i class="bi bi-pen"></i></a>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

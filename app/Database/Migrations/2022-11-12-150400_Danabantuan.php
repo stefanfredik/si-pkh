@@ -19,6 +19,7 @@ class Danabantuan extends Migration {
 
             'id_pengurus' => [
                 'type' => 'INT',
+                'null' => true
             ],
             'keterangan' => [
                 'type' => 'VARCHAR',
