@@ -25,7 +25,7 @@ class Danabantuan extends BaseController {
     public function index() {
         // dd($this->bantuanModel->findAll());
         $data = [
-            'title' => 'Data Warga',
+            'title' => 'Data Dana Bantuan',
             'dataBantuan' => $this->bantuanModel->findAll(),
             'info' => $this->info,
         ];
