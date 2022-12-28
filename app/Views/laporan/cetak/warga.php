@@ -9,6 +9,7 @@
             <th class="text-uppercase">Jenis Kelamin</th>
             <th class="text-uppercase">No Telepon</th>
             <th class="text-uppercase">Alamat</th>
+            <th class="text-uppercase">Jenis Bantuan</th>
             <th class="text-uppercase">Tahun</th>
             <th class="text-uppercase">Periode</th>
         </tr>
@@ -23,6 +24,7 @@
                 <td class="text-capitalize"><?= $dt['no_telepon']; ?></td>
                 <td class="text-capitalize"><?= $dt['alamat']; ?></td>
                 <td class="text-capitalize"><?= $dt['tahun']; ?></td>
+                <td class="text-capitalize"><?= $dt['jenis_bantuan']; ?></td>
                 <td class="text-capitalize"><?= $dt['periode']; ?></td>
             </tr>
         <?php endforeach; ?>

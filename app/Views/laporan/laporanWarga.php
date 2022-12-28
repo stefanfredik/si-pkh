@@ -19,6 +19,7 @@
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Jenis Kelamin</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">No Telepon</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Jenis Bantuan</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tahun</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Periode</th>
                             </tr>
@@ -32,6 +33,7 @@
                                     <td class="text-capitalize"><?= $dt['jenis_kelamin']; ?></td>
                                     <td class="text-capitalize"><?= $dt['no_telepon']; ?></td>
                                     <td class="text-capitalize"><?= $dt['alamat']; ?></td>
+                                    <td class="text-capitalize"><?= $dt['jenis_bantuan']; ?></td>
                                     <td class="text-capitalize"><?= $dt['tahun']; ?></td>
                                     <td class="text-capitalize"><?= $dt['periode']; ?></td>
                                 </tr>
