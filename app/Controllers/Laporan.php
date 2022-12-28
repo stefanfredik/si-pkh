@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\DanabantuanModel;
 use App\Models\UsersModel;
 use App\Models\WargaModel;
+use Dompdf\Dompdf;
 
 class Laporan extends BaseController {
 
@@ -74,5 +75,45 @@ class Laporan extends BaseController {
 
 
     public function cetak($id) {
+        if ($id == "warga") {
+            $data = [
+                'title'         => 'Data Laporan Warga',
+                'info'          => $this->info,
+                'dataWarga'  => $this->wargaModel->findAll()
+            ];
+
+            return $this->pdf($data, "/laporan/cetak/warga");
+        }
+
+        if ($id == "pendamping") {
+            $data = [
+                'title' => 'Data Pendamping',
+                'info' => $this->info,
+                'dataPendamping' => $this->userModel->findAllPendamping()
+            ];
+
+            return $this->pdf($data, "/laporan/cetak/pendamping");
+        }
+
+        if ($id == "pengurus") {
+            $data = [
+                'title'         => 'Data Pengurus',
+                'info'          => $this->info,
+                'dataPengurus'  => $this->userModel->findAllPengurus()
+            ];
+
+            return $this->pdf($data, "/laporan/cetak/pengurus");
+        }
+    }
+
+
+    private function pdf(array $data, String $view) {
+        $pdf = new Dompdf(array('DOMPDF_ENABLE_REMOTE' => true));
+
+        $html = view($view, $data);
+        $pdf->loadHtml($html);
+        $pdf->setPaper('A4', 'potrait');
+        $pdf->render();
+        return $pdf->stream();
     }
 }

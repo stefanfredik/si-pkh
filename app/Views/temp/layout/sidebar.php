@@ -4,7 +4,7 @@
         <a class="navbar-brand m-0" href="<?= base_url(); ?>">
 
             <span class="navbar-brand-img h-100">
-                <i class=" bi bi-check2-circle"></i>
+                <img width="40px" class="img-fluid" src="/assets/img/logo.webp" alt="">
             </span>
             <span class="ms-1 font-weight-bold"><?= WEBNAME; ?></span>
         </a>
