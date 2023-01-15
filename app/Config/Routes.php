@@ -238,9 +238,18 @@ $routes->group('laporan', static function ($router) {
     $router->get('danabantuan', 'Laporan::danabantuan');
     $router->get('pengurus', 'Laporan::pengurus');
 
+    $router->get('bantuantunai', 'Laporan::bantuantunai');
+    $router->get('disabilitas', 'Laporan::disabilitas');
+    $router->get('lansia', 'Laporan::lansia');
+
     $router->get('cetak/pendamping', 'Laporan::cetak/pendamping');
     $router->get('cetak/pengurus', 'Laporan::cetak/pengurus');
     $router->get('cetak/warga', 'Laporan::cetak/warga');
+
+    $router->get('cetak/bantuantunai', 'Laporan::cetak/bantuantunai');
+    $router->get('cetak/disabilitas', 'Laporan::cetak/disabilitas');
+    $router->get('cetak/lansia', 'Laporan::cetak/lansia');
+
 
     $router->post('cetak', 'Laporan::cetak');
 });

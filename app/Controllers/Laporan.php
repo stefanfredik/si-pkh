@@ -4,6 +4,9 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\DanabantuanModel;
+use App\Models\DisabilitasModel;
+use App\Models\LansiaModel;
+use App\Models\TransaksiModel;
 use App\Models\UsersModel;
 use App\Models\WargaModel;
 use Dompdf\Dompdf;
@@ -74,6 +77,44 @@ class Laporan extends BaseController {
     }
 
 
+    public function bantuantunai() {
+        $transaksiModel = new TransaksiModel();
+
+        $data = [
+            'title' => 'Data Bantuan Tunai',
+            'dataTransaksi' => $transaksiModel->findAll()
+        ];
+
+        return view("laporan/indexBantuantunai", $data);
+    }
+
+    public function disabilitas() {
+        $disabilitasModel = new DisabilitasModel();
+
+        $data = [
+            'title' => 'Data Disabilitas',
+            'dataDisabilitas' => $disabilitasModel->findAll(),
+            'info' => $this->info,
+        ];
+
+        return view("/laporan/indexDisabilitas", $data);
+    }
+
+
+    public function lansia() {
+        $lansiaModel = new LansiaModel();
+
+        $data = [
+            'title' => 'Data Transaksi Lansia',
+            'dataLansia' => $lansiaModel->findAll(),
+        ];
+
+        return view("/laporan/indexLansia", $data);
+    }
+
+
+
+    // Cetak
     public function cetak($id) {
         if ($id == "warga") {
             $data = [
@@ -103,6 +144,54 @@ class Laporan extends BaseController {
             ];
 
             return $this->pdf($data, "/laporan/cetak/pengurus");
+        }
+
+        if ($id == "bantuantunai") {
+            $transaksiModel = new TransaksiModel();
+
+            $data = [
+                'title' => 'Data Bantuan Tunai',
+                'dataTransaksi' => $transaksiModel->findAll()
+            ];
+
+            return $this->pdf($data, "/laporan/cetak/bantuantunai");
+        }
+
+
+        if ($id == "disabilitas") {
+            $disabilitasModel = new DisabilitasModel();
+
+            $data = [
+                'title' => 'Data Disabilitas',
+                'dataDisabilitas' => $disabilitasModel->findAll(),
+                'info' => $this->info,
+            ];
+
+            return $this->pdf($data, "/laporan/cetak/disabilitas");
+        }
+
+        if ($id == "disabilitas") {
+            $disabilitasModel = new DisabilitasModel();
+
+            $data = [
+                'title' => 'Data Disabilitas',
+                'dataDisabilitas' => $disabilitasModel->findAll(),
+                'info' => $this->info,
+            ];
+
+            return $this->pdf($data, "/laporan/cetak/lansia");
+        }
+
+
+        if ($id == "lansia") {
+            $lansiaModel = new LansiaModel();
+
+            $data = [
+                'title' => 'Data Transaksi Lansia',
+                'dataLansia' => $lansiaModel->findAll(),
+            ];
+
+            return $this->pdf($data, "/laporan/cetak/lansia");
         }
     }
 
