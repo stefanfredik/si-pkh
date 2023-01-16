@@ -3,6 +3,9 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\DanabantuanModel;
+use App\Models\DisabilitasModel;
+use App\Models\LansiaModel;
 use App\Models\TransaksiModel;
 use App\Models\UsersModel as ModelsUsersModel;
 use App\Models\WargaModel;
@@ -18,6 +21,9 @@ class Dashboard extends BaseController {
         $this->wargaModel = new WargaModel();
         $this->userModel = new ModelsUsersModel();
         $this->transaksiModel = new TransaksiModel();
+        $this->tlansiaModel = new LansiaModel();
+        $this->tdisabilitasModel = new DisabilitasModel();
+        $this->tbantuanTunai = new DanabantuanModel();
     }
 
     public function index() {
@@ -27,7 +33,10 @@ class Dashboard extends BaseController {
             'jumWarga' => $this->wargaModel->countAll(),
             'jumUser' => $this->userModel->countAll(),
             'jumPengurus' => $this->userModel->countAllPengurus(),
-            'jumPendamping' => $this->userModel->countAllPendamping()
+            'jumPendamping' => $this->userModel->countAllPendamping(),
+            'jumTransaksiLansia'     => $this->tlansiaModel->countAll(),
+            'jumTransaksiDisabilitas' => $this->tdisabilitasModel->countAll(),
+            'jumTransaksiBantuanTunai'      => $this->tbantuanTunai->countAll(),
         ];
 
         return view("home/index", $data);

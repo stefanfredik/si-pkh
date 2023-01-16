@@ -128,34 +128,9 @@
           <div class="col-8">
             <div class="numbers">
               <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                Data Transaksi
-              </p>
-              <h5 class="font-weight-bolder">1</h5>
-              <p class="mb-0">
-                Data
-              </p>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-              <i class="ni ni-credit-card text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-    <div class="card shadow">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">
                 Data Lansia
               </p>
-              <h5 class="font-weight-bolder"><?= $jumWarga; ?></h5>
+              <h5 class="font-weight-bolder"><?= $jumTransaksiLansia; ?></h5>
               <p class="mb-0">
                 Warga
               </p>
@@ -163,7 +138,7 @@
           </div>
           <div class="col-4 text-end">
             <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+              <i class="ni ni-bullet-list-67 text-lg opacity-10" aria-hidden="true"></i>
             </div>
           </div>
         </div>
@@ -184,15 +159,15 @@
               <p class="text-sm mb-0 text-uppercase font-weight-bold">
                 Data Disablitas
               </p>
-              <h5 class="font-weight-bolder"><?= $jumPengurus; ?></h5>
+              <h5 class="font-weight-bolder"><?= $jumTransaksiDisabilitas; ?></h5>
               <p class="mb-0">
-                Pengurus
+                Transaksi
               </p>
             </div>
           </div>
           <div class="col-4 text-end">
             <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-              <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+              <i class="ni ni-bullet-list-67 text-lg opacity-10" aria-hidden="true"></i>
             </div>
           </div>
         </div>
@@ -207,11 +182,11 @@
           <div class="col-8">
             <div class="numbers">
               <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                Data Laporan
+                Data Bantuan Tunai
               </p>
-              <h5 class="font-weight-bolder"><?= $jumPendamping; ?></h5>
+              <h5 class="font-weight-bolder"><?= $jumTransaksiBantuanTunai; ?></h5>
               <p class="mb-0">
-                Data
+                Transaksi
               </p>
             </div>
           </div>
