@@ -121,7 +121,7 @@
 <hr>
 
 <div class="row">
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+  <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
     <div class="card shadow">
       <div class="card-body">
         <div class="row">
@@ -132,7 +132,7 @@
               </p>
               <h5 class="font-weight-bolder"><?= $jumTransaksiLansia; ?></h5>
               <p class="mb-0">
-                Warga
+                Transaksi
               </p>
             </div>
           </div>
@@ -150,7 +150,7 @@
 
 
 
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+  <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
     <div class="card shadow">
       <div class="card-body">
         <div class="row">
@@ -175,7 +175,7 @@
     </div>
   </div>
 
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+  <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
     <div class="card shadow">
       <div class="card-body">
         <div class="row">
