@@ -171,6 +171,7 @@ class Laporan extends BaseController {
         }
 
         if ($id == "disabilitas") {
+
             $disabilitasModel = new DisabilitasModel();
 
             $data = [

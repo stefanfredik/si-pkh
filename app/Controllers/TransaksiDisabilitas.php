@@ -12,7 +12,7 @@ class TransaksiDisabilitas extends BaseController {
         'title' => 'Data Transaksi Disabilitas'
     ];
 
-    private $jenisBantuan;
+    private $jenisBantuan = "Bantuan Disabilitas";
 
     public function __construct() {
         $this->wargaModel = new WargaModel();
@@ -20,6 +20,7 @@ class TransaksiDisabilitas extends BaseController {
     }
 
     public function index() {
+        // dd($this->disabilitasModel->findAll());
         $data = [
             'title' => 'Data Disabilitas',
             'dataDisabilitas' => $this->disabilitasModel->findAll(),

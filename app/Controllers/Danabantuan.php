@@ -16,7 +16,6 @@ class Danabantuan extends BaseController {
         'title' => 'Dana Bantuan'
     ];
 
-
     public function __construct() {
         $this->bantuanModel = new DanabantuanModel();
         $this->userModel = new UserModel();
