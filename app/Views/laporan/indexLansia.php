@@ -18,7 +18,6 @@
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NIK</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ID Penamping</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Keterangan</th>
-                                <th width="150px" class="text-secondary opacity-7">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,7 +29,6 @@
                                     <td class="text-secondary text-sm"><?= $dt['no_nik']; ?></td>
                                     <td class="text-secondary text-sm"><?= $dt['nama_pendamping']; ?></td>
                                     <td class="text-secondary text-sm"><?= $dt['keterangan']; ?></td>
-                                    <?= view_cell('\App\Libraries\Widget::tombolAksi', ['url' => $info['url'], 'id' => $dt['id']]); ?>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

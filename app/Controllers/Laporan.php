@@ -170,18 +170,18 @@ class Laporan extends BaseController {
             return $this->pdf($data, "/laporan/cetak/disabilitas");
         }
 
-        if ($id == "disabilitas") {
+        // if ($id == "disabilitas") {
 
-            $disabilitasModel = new DisabilitasModel();
+        //     $disabilitasModel = new DisabilitasModel();
 
-            $data = [
-                'title' => 'Data Disabilitas',
-                'dataDisabilitas' => $disabilitasModel->findAll(),
-                'info' => $this->info,
-            ];
+        //     $data = [
+        //         'title' => 'Data Disabilitas',
+        //         'dataDisabilitas' => $disabilitasModel->findAll(),
+        //         'info' => $this->info,
+        //     ];
 
-            return $this->pdf($data, "/laporan/cetak/lansia");
-        }
+        //     return $this->pdf($data, "/laporan/cetak/lansia");
+        // }
 
 
         if ($id == "lansia") {
