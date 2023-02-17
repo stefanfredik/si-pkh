@@ -55,24 +55,24 @@ $routes->group('user', static function ($router) {
     $router->post('password/(:num)', 'User::gantiPassword/$1');
 });
 
-// $routes->group('warga', static function ($router) {
-//     // $router->get('bantuantunai', 'Warga::bantuantunai');
+$routes->group('warga', static function ($router) {
+    // $router->get('bantuantunai', 'Warga::bantuantunai');
 
-//     $router->get('/', 'Warga::index');
-//     $router->get('tambah/(:any)', 'Warga::tambah/$1');
+    $router->get('/', 'Warga::index');
+    $router->get('tambah/(:any)', 'Warga::tambah/$1');
 
-//     $router->get('(:any)', 'Warga::index/$1');
+    $router->get('(:any)', 'Warga::index/$1');
 
-//     $router->get('tambah/(:any)', 'Warga::tambah/$1');
+    $router->get('tambah/(:any)', 'Warga::tambah/$1');
 
-//     $router->get('edit/(:num)', 'Warga::edit/$1');
-//     $router->get('detail/(:num)', 'Warga::detail/$1');
-//     $router->get('delete/(:num)', 'Warga::delete/$1');
-//     $router->get('password/(:num)', 'Warga::password/$1');
+    $router->get('edit/(:num)', 'Warga::edit/$1');
+    $router->get('detail/(:num)', 'Warga::detail/$1');
+    $router->get('delete/(:num)', 'Warga::delete/$1');
+    $router->get('password/(:num)', 'Warga::password/$1');
 
-//     $router->post("/", "Warga::add");
-//     $router->post("(:num)", "Warga::update/$1");
-// });
+    $router->post("/", "Warga::add");
+    $router->post("(:num)", "Warga::update/$1");
+});
 
 
 $routes->group("bantuantunai/warga", static function ($router) {
@@ -254,6 +254,10 @@ $routes->group('laporan', static function ($router) {
     $router->post('cetak', 'Laporan::cetak');
 });
 
+
+// $routes->group('datawarga', static function ($router) {
+//     $router->get('/', 'Warga::index');
+// });
 
 /*
  * --------------------------------------------------------------------

@@ -54,6 +54,17 @@
     <hr class="horizontal dark mt-0" />
 
     <li class="nav-item">
+        <a class="nav-link <?= url_is('datawarga*') ? 'active' : ''; ?>" href="/datawarga">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-shop text-primary text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Data Warga</span>
+        </a>
+    </li>
+
+    <hr class="horizontal dark mt-0" />
+
+    <li class="nav-item">
         <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link  <?= url_is('*warga') ? 'active' : ''; ?> collapsed" aria-controls="dashboardsExamples" role="button" aria-expanded="false">
             <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
                 <i class="ni ni-shop text-primary text-sm opacity-10"></i>

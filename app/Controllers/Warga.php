@@ -25,14 +25,12 @@ class Warga extends BaseController {
     }
 
     public function index($jenisBantuan = null) {
-        if ($jenisBantuan == null) {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-        }
-
-        $dataWarga = $this->wargaModel->where("jenis_bantuan", 'bantuantunai')->findAll();
+        // if ($jenisBantuan == null) {
+        //     throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        // }
         $data = [
             'title' => 'Data Warga',
-            'dataWarga' => $dataWarga,
+            'dataWarga' => $this->wargaModel->findAll(),
             'info' => $this->info,
             'danaBantuan' => $this->bantuanModel->findAll()
         ];
@@ -51,11 +49,11 @@ class Warga extends BaseController {
             return view("warga/disabilitas/index", $data);
         }
 
-        // $tahun = $this->request->getGet('tahun');
-        // $periode = $this->request->getGet('periode');
-        // $bantuan = $this->request->getGet('bantuan');
+        $tahun = $this->request->getGet('tahun');
+        $periode = $this->request->getGet('periode');
+        $bantuan = $this->request->getGet('bantuan');
 
-        // $dataWarga = $this->wargaModel->filter($tahun, $periode, $bantuan);
+        $dataWarga = $this->wargaModel->filter($tahun, $periode, $bantuan);
 
         // $data = [
         //     'title' => 'Data Warga',
@@ -64,7 +62,7 @@ class Warga extends BaseController {
         //     'danaBantuan' => $this->bantuanModel->findAll()
         // ];
 
-        // return view("warga/index", $data);
+        return view("warga/index", $data);
     }
 
 
