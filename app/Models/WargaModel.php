@@ -4,7 +4,8 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class WargaModel extends Model {
+class WargaModel extends Model
+{
     protected $DBGroup          = 'default';
     protected $table            = 'warga';
     protected $primaryKey       = 'id';
@@ -31,14 +32,15 @@ class WargaModel extends Model {
     //     return $this->get()->getResultArray();
     // }
 
-    function filter($tahun = null, $periode = null, $bantuan = null) {
+    function filter($tahun = null, $periode = null, $bantuan = null)
+    {
 
         $this->select('warga.*');
         $this->select('users.nama_user,users.id as id_user');
         $this->select('danabantuan.nama_bantuan');
         $this->select('danabantuan.id as id_bantuan');
         $this->join('users', 'users.id = warga.pendamping');
-        $this->join('danabantuan', 'danabantuan.id = warga.jenis_bantuan');
+        $this->join('danabantuan', 'danabantuan.nama_bantuan = warga.jenis_bantuan');
 
         if ($tahun) {
             $this->where('tahun', $tahun);
@@ -49,13 +51,13 @@ class WargaModel extends Model {
         }
 
         if ($bantuan) {
-            $this->where('jenis_bantuan', $bantuan);
+            $this->where('nama_bantuan', $bantuan);
         }
         return $this->get()->getResultArray();
-        // return $this->findAll();
     }
 
-    function find($id = null) {
+    function find($id = null)
+    {
         $this->select('warga.*');
         $this->where('warga.id', $id);
         $this->select('users.nama_user');
@@ -64,7 +66,8 @@ class WargaModel extends Model {
     }
 
 
-    function findAllWarga($jenisBantuan = null) {
+    function findAllWarga($jenisBantuan = null)
+    {
         $this->select("warga.*");
         $this->select('users.nama_user as nama_pendamping');
         $this->where("warga.jenis_bantuan", $jenisBantuan);

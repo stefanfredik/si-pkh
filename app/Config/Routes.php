@@ -59,11 +59,9 @@ $routes->group('warga', static function ($router) {
     // $router->get('bantuantunai', 'Warga::bantuantunai');
 
     $router->get('/', 'Warga::index');
-    $router->get('tambah/(:any)', 'Warga::tambah/$1');
+    $router->get('tambah', 'Warga::tambah');
 
     $router->get('(:any)', 'Warga::index/$1');
-
-    $router->get('tambah/(:any)', 'Warga::tambah/$1');
 
     $router->get('edit/(:num)', 'Warga::edit/$1');
     $router->get('detail/(:num)', 'Warga::detail/$1');
