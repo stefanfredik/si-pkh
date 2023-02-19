@@ -3,7 +3,7 @@
 
 <?php $transaksiModel = new App\Models\TransaksiModel() ?>
 
-<a href="/<?= $info['url']; ?>/tambah" class="btn btn-outline-white">Tambah Data <?= $info['title']; ?></a>
+<!-- <a href="/<?= $info['url']; ?>/tambah" class="btn btn-outline-white">Tambah Data <?= $info['title']; ?></a> -->
 
 <div class="row">
     <div class="col-12">
