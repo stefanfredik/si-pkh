@@ -11,6 +11,14 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Jenis Bantuan</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p for=""><?= $warga['jenis_bantuan']; ?></p>
+                        </div>
+                    </div>
                     <p class="text-uppercase text-sm">Profil</p>
 
                     <div class="row">

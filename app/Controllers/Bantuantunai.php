@@ -8,7 +8,8 @@ use App\Models\UsersModel;
 use App\Models\WargaModel;
 use CodeIgniter\API\ResponseTrait;
 
-class Bantuantunai extends BaseController {
+class Bantuantunai extends BaseController
+{
     use ResponseTrait;
 
     private $info = [
@@ -18,13 +19,15 @@ class Bantuantunai extends BaseController {
 
     private $jenisBantuan = 'Bantuan Tunai';
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->wargaModel = new WargaModel();
         $this->userModel = new UsersModel();
         $this->bantuanModel = new DanabantuanModel();
     }
 
-    public function index() {
+    public function index()
+    {
         $data = [
             'title' => 'Data ' . $this->info['title'],
             'dataWarga' => $this->wargaModel->findAllWarga($this->jenisBantuan),
@@ -35,7 +38,8 @@ class Bantuantunai extends BaseController {
         return view("warga/bantuantunai/index", $data);
     }
 
-    public function tambah() {
+    public function tambah()
+    {
         $data = [
             'title'        => 'Tambah Warga Bantuan Tunai',
             'validation'    => $this->validation,
@@ -46,7 +50,8 @@ class Bantuantunai extends BaseController {
         return view("/warga/bantuantunai/tambah", $data);
     }
 
-    public function add() {
+    public function add()
+    {
         $data = $this->request->getPost();
         $data['jenis_bantuan'] = $this->jenisBantuan;
 
@@ -56,7 +61,8 @@ class Bantuantunai extends BaseController {
         return redirect()->to($this->info['url']);
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $warga = $this->wargaModel->find($id);
 
         $warga ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
@@ -72,7 +78,8 @@ class Bantuantunai extends BaseController {
     }
 
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $warga = $this->wargaModel->find($id);
         $warga ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 
@@ -89,7 +96,8 @@ class Bantuantunai extends BaseController {
         return redirect()->to($this->info['url']);
     }
 
-    public function update($id) {
+    public function update($id)
+    {
         $warga = $this->wargaModel->find($id);
         $warga ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 
@@ -99,7 +107,8 @@ class Bantuantunai extends BaseController {
         return redirect()->to($this->info['url']);
     }
 
-    public function detail($id) {
+    public function detail($id)
+    {
         $warga = $this->wargaModel->find($id);
         $warga ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 

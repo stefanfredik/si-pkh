@@ -6,7 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\TransaksiModel;
 use App\Models\WargaModel;
 
-class TransaksiBantuantunai extends BaseController {
+class TransaksiBantuantunai extends BaseController
+{
 
     private $info = [
         'url' => 'bantuantunai/transaksi',
@@ -15,12 +16,14 @@ class TransaksiBantuantunai extends BaseController {
 
     private $jenisBantuan = 'Bantuan Tunai';
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->wargaModel = new WargaModel();
         $this->transaksiModel = new TransaksiModel();
     }
 
-    public function index() {
+    public function index()
+    {
 
         $data = [
             'title' => 'Data Transaksi ' . $this->info['title'],
@@ -31,7 +34,8 @@ class TransaksiBantuantunai extends BaseController {
         return view("/transaksi/bantuantunai/index", $data);
     }
 
-    public function tambah() {
+    public function tambah()
+    {
         $data = [
             'title' => 'Tambah Data ' . $this->info['title'],
             'validation' => $this->validation,
@@ -43,7 +47,8 @@ class TransaksiBantuantunai extends BaseController {
     }
 
 
-    public function add() {
+    public function add()
+    {
         $data = $this->request->getPost();
         $this->transaksiModel->save($data);
 
@@ -51,7 +56,8 @@ class TransaksiBantuantunai extends BaseController {
         return redirect()->to($this->info['url']);
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $transaksi = $this->transaksiModel->find($id);
         $transaksi ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 
@@ -67,7 +73,8 @@ class TransaksiBantuantunai extends BaseController {
         return redirect()->to($this->info['url']);
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $transaksi = $this->transaksiModel->find($id);
 
         $transaksi ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
@@ -82,7 +89,8 @@ class TransaksiBantuantunai extends BaseController {
         return view('/transaksi/bantuantunai/edit', $data);
     }
 
-    public function update($id) {
+    public function update($id)
+    {
         $transaksi = $this->transaksiModel->find($id);
         $transaksi ?? throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 

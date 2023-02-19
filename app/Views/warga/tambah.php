@@ -17,10 +17,10 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="example-text-input" class="form-control-label">Jenis Bantuan</label>
-                                <select onchange="pilihBantuan()" id="jenis_bantuan" class="form-control" name="jenis_bantuan" id="">
+                                <select onchange="pilihBantuan()" id="jenis_bantuan" class="form-control" name="jenis_bantuan">
                                     <option value="" selected>Pilih Jenis Bantuan</option>
                                     <?php foreach ($danaBantuan as $db) : ?>
-                                        <option value="<?= $db['nama_bantuan']; ?>" selected><?= $db['nama_bantuan']; ?></option>
+                                        <option value="<?= $db['nama_bantuan']; ?>"><?= $db['nama_bantuan']; ?></option>
                                     <?php endforeach;  ?>
                                 </select>
                             </div>
@@ -320,7 +320,6 @@
 </div>
 
 <div hidden id="bantuanDisabilitas">
-
     <p class="text-uppercase text-sm">Profil</p>
     <div class="row">
         <div class="col-md-12">
