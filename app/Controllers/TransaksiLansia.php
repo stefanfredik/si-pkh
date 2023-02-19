@@ -47,7 +47,8 @@ class TransaksiLansia extends BaseController {
         $this->lansiaModel->save($data);
 
         setSwall("Sukses Menambah Data");
-        return redirect()->to($this->info['url']);
+
+        return redirect()->to('/transaksi');
     }
 
     public function delete($id) {
@@ -64,7 +65,8 @@ class TransaksiLansia extends BaseController {
         ];
 
         setSwall("Sukses Menghapus Data.");
-        return redirect()->to($this->info['url']);
+
+        return redirect()->to('/transaksi');
     }
 
     public function edit($id) {
@@ -91,6 +93,6 @@ class TransaksiLansia extends BaseController {
         $data = $this->request->getPost();
         $this->lansiaModel->update($id, $data);
         setSwall("Sukses Mengupdate Data");
-        return redirect()->to($this->info['url']);
+        return redirect()->to('/transaksi');
     }
 }

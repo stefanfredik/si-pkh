@@ -29,6 +29,20 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Pilih Jenis Transaksi</label>
+                                <select required name="id_warga" class="form-control" data-live-search="true" type="text">
+                                    <option value="">Pilih Transaksi</option>
+                                    <option value="bantuanTunai">Bantuan Tunai</option>
+                                    <option value="bantuanLansia">Bantuan Lansia</option>
+                                    <option value="bantuanDisabilitas">Bantuan Disabilitas</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
                                 <label for="example-text-input" class="form-control-label">Jumlah Uang</label>
                                 <input required name="jumlah" class="form-control" type="text" placeholder="Masukan Jumlah Uang">
                             </div>
@@ -67,3 +81,36 @@
 
 
 <?= $this->endSection(); ?>
+
+<?= $this->section("script") ?>
+<script>
+    function pilihBantuan() {
+        const jenisTransaksi = document.getElementById('jenisTransaksi');
+        const inputBantuan = document.getElementById('inputbantuan');
+
+        const bantuanTunai = document.getElementById("bantuanTunai");
+        const bantuanLansia = document.getElementById("bantuanLansia");
+        const bantuanDisabilitas = document.getElementById("bantuanDisabilitas");
+
+        if (jenisBantuan.value == 'Bantuan Tunai') {
+            inputBantuan.innerHTML = "";
+            inputBantuan.appendChild(bantuanTunai);
+            bantuanTunai.hidden = false;
+        }
+
+        if (jenisBantuan.value == 'Bantuan Disabilitas') {
+            inputBantuan.innerHTML = "";
+
+            inputBantuan.appendChild(bantuanDisabilitas);
+            bantuanDisabilitas.hidden = false;
+        }
+
+        if (jenisBantuan.value == 'Bantuan Lansia') {
+            inputBantuan.innerHTML = "";
+            inputBantuan.appendChild(bantuanLansia);
+            bantuanLansia.hidden = false;
+        }
+
+    }
+</script>
+<?= $this->endSection() ?>

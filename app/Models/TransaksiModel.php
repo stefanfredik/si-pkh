@@ -31,4 +31,37 @@ class TransaksiModel extends Model {
         $this->join("users", "users.id = warga.pendamping", 'left');
         return $this->get()->getResultArray();
     }
+
+
+    public function danaTerpakai($periode, $tahun) {
+        $this->selectSum("jumlah");
+        // $this->select("warga.*");
+        $this->join("warga", "warga.id = transaksi.id_warga");
+        $this->where("warga.periode", $periode);
+        $this->where("warga.tahun", $tahun);
+        return $this->first();
+    }
+
+
+    public function allDanaTerpakai() {
+        $this->selectSum("jumlah");
+        $this->join("warga", "warga.id = transaksi.id_warga");
+        return $this->first();
+    }
+
+    public function jumAllPenerima(string $jenisBantuan, $periode = null, $tahun = null) {
+
+        $this->join("warga", "warga.id = transaksi.id_warga");
+        $this->where("warga.jenis_bantuan", $jenisBantuan);
+        if ($periode != null) {
+            $this->where("warga.periode", $periode);
+        }
+
+        if ($tahun != null) {
+            $this->where("warga.tahun", $tahun);
+        }
+
+
+        return $this->countAllResults("jumlah");;
+    }
 }

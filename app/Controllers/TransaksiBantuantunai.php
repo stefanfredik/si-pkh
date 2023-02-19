@@ -48,7 +48,7 @@ class TransaksiBantuantunai extends BaseController {
         $this->transaksiModel->save($data);
 
         setSwall("Sukses Menambah Data Transaksi");
-        return redirect()->to($this->info['url']);
+        return redirect()->to('/transaksi');
     }
 
     public function delete($id) {
@@ -64,7 +64,7 @@ class TransaksiBantuantunai extends BaseController {
         ];
 
         setSwall("Sukses Menghapus Data.");
-        return redirect()->to($this->info['url']);
+        return redirect()->to('/transaksi');
     }
 
     public function edit($id) {
@@ -89,6 +89,6 @@ class TransaksiBantuantunai extends BaseController {
         $data = $this->request->getPost();
         $this->transaksiModel->update($id, $data);
         setSwall("Sukses Mengupdate Data");
-        return redirect()->to($this->info['url']);
+        return redirect()->to('/transaksi');
     }
 }

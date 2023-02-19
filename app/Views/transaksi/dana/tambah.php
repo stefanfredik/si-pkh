@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card">
-                <?= form_open("/" . $info['url'], ['class' => "needs-validation"]); ?>
+                <?= form_open("/dana", ['class' => "needs-validation"]); ?>
                 <div class="card-header pb-0">
                     <div class="d-flex align-items-center">
                         <p class="mb-0"><?= $title; ?></p>
@@ -13,33 +13,33 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Nama Warga</label>
-                                <select required name="id_warga" class="form-control" data-live-search="true" type="text">
-                                    <option value="">Pilih Warga</option>
-                                    <?php foreach ($dataWarga as $dt) : ?>
-                                        <option value="<?= $dt['id']; ?>"><?= $dt['nama_lengkap']; ?></option>
-                                    <?php endforeach; ?>
+                                <label for="example-text-input" class="form-control-label">Periode</label>
+                                <select required name="periode" class="form-control" data-live-search="true" type="text">
+                                    <option value="">Pilih Periode</option>
+                                    <option value="Periode 1">Periode 1</option>
+                                    <option value="Periode 2">Periode 2</option>
+                                    <option value="Periode 3">Periode 3</option>
+                                    <option value="Periode 4">Periode 4</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Jumlah Uang</label>
-                                <input required name="jumlah" class="form-control" type="text" placeholder="Masukan Jumlah Uang">
+                                <label for="example-text-input" class="form-control-label">Tahun</label>
+                                <input required name="tahun" class="form-control" type="text" placeholder="Tahun">
                             </div>
                         </div>
                     </div>
 
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="example-text-input" class="form-control-label">Tanggal Transaksi</label>
-                                <input required name="tanggal_transaksi" class="form-control" type="date">
+                                <label for="example-text-input" class="form-control-label">Jumlah Dana Awal</label>
+                                <input required name="dana_awal" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="card-footer">
-                    <a href="/<?= ($info['url']) ?>" class=" btn btn-secondary">Batal</a>
+                    <a href="/transaksi" class=" btn btn-secondary">Batal</a>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
 

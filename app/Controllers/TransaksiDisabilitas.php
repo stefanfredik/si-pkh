@@ -46,7 +46,7 @@ class TransaksiDisabilitas extends BaseController {
         $this->disabilitasModel->save($data);
 
         setSwall("Sukses Menambah Data");
-        return redirect()->to($this->info['url']);
+        return redirect()->to('/transaksi');
     }
 
     public function delete($id) {
@@ -60,7 +60,7 @@ class TransaksiDisabilitas extends BaseController {
         ];
 
         setSwall("Sukses Menghapus Data.");
-        return redirect()->to($this->info['url']);
+        return redirect()->to('/transaksi');
     }
 
     public function edit($id) {
@@ -88,6 +88,6 @@ class TransaksiDisabilitas extends BaseController {
         $this->disabilitasModel->update($id, $data);
 
         setSwall("Sukses Mengupdate Data");
-        return redirect()->to($this->info['url']);
+        return redirect()->to('/transaksi');
     }
 }
