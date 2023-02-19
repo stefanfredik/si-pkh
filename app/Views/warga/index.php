@@ -15,7 +15,7 @@
 
             <form action="/warga" method="GET">
                 <div class="m-4 row align-middle">
-                    <div class="col-md-2">
+                    <div class="col">
                         <label class="form-label" for="">Tahun</label>
                         <select class="form-control" name="tahun" id="">
                             <option value="">Pilih Tahun</option>
@@ -26,7 +26,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col">
                         <label class="form-label" for="">Periode</label>
                         <select class="form-control" name="periode" id="">
                             <option value="">Pilih Periode</option>
@@ -37,7 +37,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col">
                         <label class="form-label" for="">Jenis Bantuan</label>
                         <select class="form-control" name="bantuan" id="">
                             <option value="">Jenis Bantuan</option>
@@ -48,7 +48,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-1">
+                    <div class="col">
                         <button class="btn btn-primary" type="submit">Filter</button>
                     </div>
 
