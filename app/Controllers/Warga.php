@@ -28,6 +28,7 @@ class Warga extends BaseController {
         // if ($jenisBantuan == null) {
         //     throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         // }
+
         $data = [
             'title' => 'Data Warga',
             'dataWarga' => $this->wargaModel->findAll(),
