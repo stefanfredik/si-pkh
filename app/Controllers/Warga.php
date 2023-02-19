@@ -59,7 +59,7 @@ class Warga extends BaseController {
             'nama_lengkap'  => [
                 'rules'  => 'is_unique[warga.nama_lengkap]',
                 'errors' => [
-                    'is_unique' => 'Nama yang yang digunakan sudah jadi peserta penerima bantuan.',
+                    'is_unique' => 'Nama  yang digunakan sudah menjadi peserta penerima bantuan.',
                 ],
             ],
 
