@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="card-footer">
-                    <a href="/<?= ($info['url']) ?>" class=" btn btn-secondary">Batal</a>
+                    <a href="/transaksi" class=" btn btn-secondary">Batal</a>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
 

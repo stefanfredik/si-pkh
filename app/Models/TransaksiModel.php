@@ -64,4 +64,13 @@ class TransaksiModel extends Model {
 
         return $this->countAllResults("jumlah");;
     }
+
+
+    public function findAllNonBantuanTunai($jenisBantuan) {
+        $this->select("warga.*");
+        $this->join("warga", "warga.id = transaksi.id_warga", "right outer");
+        $this->where("warga.jenis_bantuan", $jenisBantuan);
+        $this->where("transaksi.id_warga", null);
+        return $this->get()->getResultArray();
+    }
 }

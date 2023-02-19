@@ -65,15 +65,9 @@ class WargaModel extends Model {
 
     function findAllWarga($jenisBantuan = null) {
         $this->select("warga.*");
-        // $this->select("warga.id as id");
-        // $this->select("transaksi.*");
         $this->select('users.nama_user as nama_pendamping');
-
-        $this->join('transaksi', 'warga.id = transaksi.id_warga', 'left');
-        $this->join('users', 'users.id = warga.pendamping');
         $this->where("warga.jenis_bantuan", $jenisBantuan);
-        $this->where("transaksi.id_warga", null);
-
+        $this->join('users', 'users.id = warga.pendamping');
         return $this->findAll();
     }
 }

@@ -35,7 +35,7 @@ class TransaksiDisabilitas extends BaseController {
             'title' => 'Tambah Data ' . $this->info['title'],
             'validation' => $this->validation,
             'info' => $this->info,
-            'dataWarga' => $this->wargaModel->findAllWarga($this->jenisBantuan)
+            'dataWarga' => $this->disabilitasModel->findAllNonBantuanTunai($this->jenisBantuan)
         ];
 
         return view("/transaksi/disabilitas/tambah", $data);

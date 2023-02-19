@@ -55,12 +55,44 @@ class Warga extends BaseController {
     }
 
     public function add() {
-        $data = $this->request->getPost();
+        $rules = [
+            'nama_lengkap'  => [
+                'rules'  => 'is_unique[warga.nama_lengkap]',
+                'errors' => [
+                    'is_unique' => 'Nama yang yang digunakan sudah jadi peserta penerima bantuan.',
+                ],
+            ],
 
-        $this->wargaModel->save($data);
+            'no_nik'  => [
+                'rules'  => 'is_unique[warga.no_nik]',
+                'errors' => [
+                    'is_unique' => 'NIK telah digunakan.',
+                ],
+            ],
+            'no_telepon'  => [
+                'rules'  => 'is_unique[warga.no_telepon]',
+                'errors' => [
+                    'is_unique' => 'Nomor telepon telah digunakan.',
+                ],
+            ],
+        ];
 
-        setSwall("Sukses Menambah Data Data");
-        return redirect()->to($this->info['url']);
+        if (!$this->validate($rules)) {
+            $data = [
+                'validation' => $this->validation
+            ];
+
+            setSwall("Gagal menambah data!", "error");
+            return redirect()->to('/warga/tambah')->withInput();
+        } else {
+
+            $data = $this->request->getPost();
+
+            $this->wargaModel->save($data);
+
+            setSwall("Sukses Menambah Data Data");
+            return redirect()->to($this->info['url']);
+        }
     }
 
     public function delete($id) {

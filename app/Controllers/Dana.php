@@ -19,7 +19,6 @@ class Dana extends BaseController {
 
     public function index() {
         // dd($this->transaksiModel->danaTerpakai("Periode 2", "61"));
-
         $data = [
             'title' => 'Data ' . $this->info['title'],
             'dana' => $this->danaModel->findAll(),

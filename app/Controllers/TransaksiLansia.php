@@ -36,7 +36,7 @@ class TransaksiLansia extends BaseController {
             'title' => 'Tambah Data ' . $this->info['title'],
             'validation' => $this->validation,
             'info' => $this->info,
-            'dataWarga' => $this->wargaModel->findAllWarga($this->jenisBantuan)
+            'dataWarga' => $this->lansiaModel->findAllNonBantuanTunai($this->jenisBantuan)
         ];
 
         return view("/transaksi/lansia/tambah", $data);

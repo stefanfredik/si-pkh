@@ -16,7 +16,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="example-text-input" class="form-control-label">Nama Warga</label>
-                                <select required name="id_warga" class="form-control" type="text">
+                                <select disabled required name="id_warga" class="form-control" type="text">
                                     <option value="">Pilih Warga</option>
                                     <?php foreach ($dataWarga as $dt) : ?>
                                         <option <?= $dt['id'] == $transaksi['id_warga'] ? 'selected' : ''; ?> value="<?= $dt['id']; ?>"><?= $dt['nama_lengkap']; ?></option>

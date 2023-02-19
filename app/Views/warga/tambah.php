@@ -2,6 +2,7 @@
 <?= $this->section("content"); ?>
 
 <div class="container-fluid py-4">
+
     <div class="row">
         <div class="col-md-8">
             <div class="card">
@@ -11,6 +12,14 @@
                         <p class="mb-0"><?= $title; ?></p>
                     </div>
                 </div>
+
+                <?php if ($validation->getErrors()) : ?>
+                    <div class="row m-3 rounded">
+                        <div class="col">
+                            <div class="bg-danger text-white"><?= $validation->listErrors(); ?></div>
+                        </div>
+                    </div>
+                <?php endif; ?>
                 <div class="card-body">
                     <p class="text-uppercase text-sm">Bantuan</p>
                     <div class="row">
@@ -75,7 +84,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class=" row">
         <div class="col-md-6">
             <div class="form-group">
                 <label for="example-text-input" class="form-control-label">Jenis</label>

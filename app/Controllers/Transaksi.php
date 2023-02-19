@@ -25,6 +25,7 @@ class Transaksi extends BaseController {
 
     public function index() {
         // dd($this->wargaModel->findAllWarga('Bantuan Tunai'));
+        // dd($this->transaksiModel->jumAllPenerima('Bantuan Tunai'));
         $data = [
             'title' => 'Data Transaksi',
             'dataTransaksi' => $this->transaksiModel->findAll(),

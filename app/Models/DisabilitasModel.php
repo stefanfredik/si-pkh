@@ -30,4 +30,12 @@ class DisabilitasModel extends Model {
         $this->join("users", "users.id = warga.pendamping", 'left');
         return $this->get()->getResultArray();
     }
+
+    public function findAllNonBantuanTunai($jenisBantuan) {
+        $this->select("warga.*");
+        $this->join("warga", "warga.id = disabilitas.id_warga", "right outer");
+        $this->where("warga.jenis_bantuan", $jenisBantuan);
+        $this->where("disabilitas.id_warga", null);
+        return $this->get()->getResultArray();
+    }
 }

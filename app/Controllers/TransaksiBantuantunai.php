@@ -32,11 +32,12 @@ class TransaksiBantuantunai extends BaseController {
     }
 
     public function tambah() {
+        // dd($this->transaksiModel->findAllNonBantuanTunai($this->jenisBantuan));
         $data = [
             'title' => 'Tambah Data ' . $this->info['title'],
             'validation' => $this->validation,
             'info' => $this->info,
-            'dataWarga' => $this->wargaModel->findAllWarga($this->jenisBantuan)
+            'dataWarga' => $this->transaksiModel->findAllNonBantuanTunai($this->jenisBantuan)
         ];
 
         return view("/transaksi/bantuantunai/tambah", $data);
