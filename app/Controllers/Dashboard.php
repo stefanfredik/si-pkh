@@ -11,22 +11,25 @@ use App\Models\UsersModel as ModelsUsersModel;
 use App\Models\WargaModel;
 use Myth\Auth\Models\UsersModel;
 
-class Dashboard extends BaseController {
+class Dashboard extends BaseController
+{
     private $info = [
         'url' => 'dashboard',
         'title' => 'Dashboard'
     ];
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->wargaModel = new WargaModel();
         $this->userModel = new ModelsUsersModel();
         $this->transaksiModel = new TransaksiModel();
         $this->tlansiaModel = new LansiaModel();
         $this->tdisabilitasModel = new DisabilitasModel();
-        $this->tbantuanTunai = new DanabantuanModel();
+        $this->tbantuanTunai = new TransaksiModel();
     }
 
-    public function index() {
+    public function index()
+    {
         $data = [
             'title' => 'Halaman Dashboard',
             'info' => $this->info,
