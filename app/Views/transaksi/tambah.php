@@ -16,7 +16,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="example-text-input" class="form-control-label">Nama Warga</label>
-                                <select required name="id_warga" class="form-control" data-live-search="true" type="text">
+                                <select id="'select-field'" required name="id_warga" class="form-control" data-live-search="true" type="text">
                                     <option value="">Pilih Warga</option>
                                     <?php foreach ($dataWarga as $dt) : ?>
                                         <option value="<?= $dt['id']; ?>"><?= $dt['nama_lengkap']; ?></option>
@@ -113,4 +113,21 @@
 
     }
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    $('#select-field').select2({
+        theme: 'bootstrap-5'
+    });
+</script>
+<?= $this->endSection() ?>
+
+
+<?= $this->section("css") ?>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 <?= $this->endSection() ?>
